@@ -1,13 +1,14 @@
 var indexSectionsWithContent =
 {
-  0: "adfgijlmnprstv",
+  0: "acdefgijlmnoprstv",
   1: "jmps",
   2: "g",
   3: "m",
   4: "adgimprv",
-  5: "dfijlmnpst",
+  5: "defijlmnpst",
   6: "pt",
-  7: "p"
+  7: "cdfjmp",
+  8: "celo"
 };
 
 var indexSectionNames =
@@ -19,7 +20,8 @@ var indexSectionNames =
   4: "functions",
   5: "variables",
   6: "enums",
-  7: "pages"
+  7: "groups",
+  8: "pages"
 };
 
 var indexSectionLabels =
@@ -31,6 +33,7 @@ var indexSectionLabels =
   4: "Funcţii",
   5: "Variabile",
   6: "Enumerări",
-  7: "Paginile"
+  7: "Grupurile",
+  8: "Paginile"
 };
 

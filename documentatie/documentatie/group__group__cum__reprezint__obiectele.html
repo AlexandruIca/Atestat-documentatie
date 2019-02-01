@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Omida: Cum reprezint obiectele jocului?</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Omida
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat de Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Caută');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Caută');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Cum reprezint obiectele jocului?</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>Prima data vom avea nevoie de un mod de a reprezenta omida. Cel mai usor ar fi sa folosim un vector care tine pozitii ale omizii, primul/ultimul element fiind capul omizii. Eu folosesc ceva similar dar care imi ofera mult mai multa flexibilitate si care este si mai rapid si consuma mai putina memorie, si anume std::deque. Deque inseamna "double ended queue" in engleza si care este un fel de coada dar care este foarte buna la insertia la inceput si la sfarsit - exact ce imi trebuie. In spate deque este o lista de vectori cu o marime fixa(de exemplu 5) care vrea sa aiba avantajele unui vector de a avea memorie continua si foarte rapid de accesat dar si avantajele unei liste de a fi foarte eficienta la insertia in mijlocul unui sir.</p>
+<p>Omida este stocata in variabila <a class="el" href="classStadiulJocului.html#a64e0608d9c68b22ea83fd5aba209453f">StadiulJocului::pozitii_omida</a>. Tipul de date folosit pentru a stoca efectiv pozitiil este <a class="el" href="structPunct.html">Punct</a>. De remarcat este faptul ca retin pozitiile unei matrici(care reprezinta terenul) <a class="el" href="classStadiulJocului.html#a2e71823589e83f16593f8a2870c065e6">StadiulJocului::teren</a>, nu valorile absolute in fereastra. Acest lucru face mult mai usoara logica jocului.</p>
+<p>Cand jocul incepe sunt inserate 3 pozitii in omida. Cand este timpul ca pozitia omizii sa fie actualizata chem <a class="el" href="classJoc.html#afd69d2cd19f6d2ac2b1a42a4685349e6">Joc::muta_omida</a>. La fiecare pas chem <a class="el" href="main_8cpp.html#aa57c630272aa6ab8ab15552adf8c165e">deseneaza_omida</a>, care parcurge <a class="el" href="classStadiulJocului.html#a64e0608d9c68b22ea83fd5aba209453f">StadiulJocului::pozitii_omida</a> si deseneaza fiecare parte a omizii pe ecran.</p>
+<p>Pentru a usura munca de a schimba directia omizii folosescu o enumeratie <a class="el" href="main_8cpp.html#aea66a0d525bf9bfb9b61e9cc1ba0b752">TipDirectie</a>. Apoi am un vector <a class="el" href="main_8cpp.html#a68e903f0d20f0a68b3c01b73eb34e9ed">directie</a> care va tine valorile cu care trebuie sa incrementez i-ul si j-ul omizii pentru a se deplasa. Cand omida se deplaseaza inserez la inceputul cozii noua pozitie a capului in functie de directie. Daca nu a mancat nimic cat s-a deplasat atunci sterg ultima pozitie din coada.</p>
+<p>Pozitia frunzei este retinuta in variabila <a class="el" href="classStadiulJocului.html#a141067404f3678036ee7a91a02532a30">StadiulJocului::pozitie_frunza</a>. Cand omida mananca o frunza trebuie generata o noua pozitie, astfel chem functia <a class="el" href="main_8cpp.html#a5f6f5f86af147286478cc7aadd76b0a2">genereaza_pozitie_noua</a>. Aceeasi functie este chemata si atunci cand omida mananca un mar.</p>
+<p>Daca jucatorul apasa tasta escape atunci chem functia <a class="el" href="classJoc.html#a0f90008558e8cbed6537b542f79ae55b">Joc::pauza</a>. </p>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.13-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Omida
+</small></address>
+</body>
+</html>

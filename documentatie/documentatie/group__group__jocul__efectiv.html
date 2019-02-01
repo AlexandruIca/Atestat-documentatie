@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Omida: Jocul efectiv</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Omida
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat de Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Caută');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Caută');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Jocul efectiv</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>Jocul va incepe cu o omida mica asezata aproximativ in centrul ferestrei. Pe capul omizii este afisat scorul curent(care incepe cu 0). Omida se misca automat in directia setata de jucator la un interval de 150 de milisecunde, reprezentat de variabila <a class="el" href="classStadiulJocului.html#a4cdf9582b472e74980e1eee73ca94769">StadiulJocului::timp_asteptare_maxim</a>.</p>
+<p>Initial directia in care se va deplasa omida este TipDirectie::SUS. Toate directiile sunt in enumeratia <a class="el" href="main_8cpp.html#aea66a0d525bf9bfb9b61e9cc1ba0b752">TipDirectie</a>. Pentru a schimba directia omizii se folosesc fie sagetile, fie tastele h, j, k, l(inspirate din vim, h - TipDirectie::STANGA, j - TipDirectie::JOS, k - TipDirectie::SUS, l - TipDirectie::DREAPTA.</p>
+<p>De asemenea pe undeva in teren este afisata si o frunza care va incrementa scorul cu 1 daca veti ajunge la ea. Cand "mancati" o frunza veti auzi si sunetul reprezentat de variabile <a class="el" href="classJoc.html#ac92412a0e2de93936c4c600a7efe45f4">Joc::m_sunet_frunza</a>. Exista si un powerup in joc(adica un mar) care va incrementa scorul cu 10. Marul este generat odata la 20 de secunde(evident, daca nu este deja in teren). Sunetul redat la "mancarea" unui mar este reprezentat de variabila <a class="el" href="classJoc.html#aec45d2779304b9ee3ba5c3962a66323b">Joc::m_sunet_powerup</a>.</p>
+<p>Terenul are dimensiunile 20x20 ceea ce inseamna ca intervalul de 150ms poate fi un pic cam mare. Pentru a misca omida mai repede tineti apasat tastele cu care schimbari directia. Cat tineti apasat tastele respective acele 150ms vor deveni 50ms.</p>
+<p>Pentru a face jocul un pic mai complicat daca ajugeti la marginile terenului omida va muri. In multe variante de snake sarpele nu moare daca atinge peretele ci va continua pe partea opusa. Omida noastra poate muri si daca a ajuns la margine si daca s-a lovit de propiul ei corp. </p>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.13-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Omida
+</small></address>
+</body>
+</html>

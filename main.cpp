@@ -1,7 +1,270 @@
 ///
-/// @file 
+/// @file
 ///
-/// @mainpage Pagina principala.
+/// @mainpage Omida
+///
+/// Omida este un joc care seamana foarte tare cu Snake. Nu l-am putut numi snake
+/// pentru ca numele era deja luat :(.
+///
+/// - @subpage cum_se_joaca
+///
+/// - @subpage cum_functioneaza
+///
+/// - @subpage la_ce_ajuta
+///
+/// - @subpage extra
+///
+
+///
+/// @page cum_se_joaca Cum se joaca?
+///
+/// - @ref group_meniu_start
+/// - @ref group_jocul_efectiv
+/// - @ref group_pauza
+/// - @ref group_final
+///
+
+/// 
+/// @defgroup group_meniu_start Meniu start
+///
+/// La inceput jocul afiseaza un meniu cu 2 optiuni: joaca si iesire.
+///
+/// Meniul selectat are un fundal mov inchis iar pentru a intra in meniul
+/// respectiv se apasa tasta ENTER. Pentru a selecta alt meniu fie se apasa
+/// click pe meniul pe care il vreti, fie folositi sagetile, fie tastele
+/// j si h(j - jos, k - sus).
+///
+/// Pentru a iesi din joc(in meniul de start) in afara de a apasa "iesire"
+/// se poate apasa tasta 'x' sau ESCAPE.
+///
+/// Odata ce ati selectat "joaca" va incepe jocul efectiv.
+///
+
+///
+/// @defgroup group_jocul_efectiv Jocul efectiv
+///
+/// Jocul va incepe cu o omida mica asezata aproximativ in centrul ferestrei.
+/// Pe capul omizii este afisat scorul curent(care incepe cu 0). Omida se
+/// misca automat in directia setata de jucator la un interval de 150 de
+/// milisecunde, reprezentat de variabila @ref StadiulJocului::timp_asteptare_maxim.
+///
+/// Initial directia in care se va deplasa omida este @ref TipDirectie::SUS. Toate
+/// directiile sunt in enumeratia @ref TipDirectie. Pentru a schimba directia
+/// omizii se folosesc fie sagetile, fie tastele h, j, k, l(inspirate din vim,
+/// h - @ref TipDirectie::STANGA, j - @ref TipDirectie::JOS, k - @ref
+/// TipDirectie::SUS, l - @ref TipDirectie::DREAPTA.
+///
+/// De asemenea pe undeva in teren este afisata si o frunza care va incrementa
+/// scorul cu 1 daca veti ajunge la ea. Cand "mancati" o frunza veti auzi si 
+/// sunetul reprezentat de variabile @ref Joc::m_sunet_frunza. Exista si un
+/// powerup in joc(adica un mar) care va incrementa scorul cu 10. Marul este
+/// generat odata la 20 de secunde(evident, daca nu este deja in teren).
+/// Sunetul redat la "mancarea" unui mar este reprezentat de variabila
+/// @ref Joc::m_sunet_powerup.
+///
+/// Terenul are dimensiunile 20x20 ceea ce inseamna ca intervalul de 150ms
+/// poate fi un pic cam mare. Pentru a misca omida mai repede tineti apasat
+/// tastele cu care schimbari directia. Cat tineti apasat tastele respective
+/// acele 150ms vor deveni 50ms.
+///
+/// Pentru a face jocul un pic mai complicat daca ajugeti la marginile terenului
+/// omida va muri. In multe variante de snake sarpele nu moare daca atinge
+/// peretele ci va continua pe partea opusa. Omida noastra poate muri si
+/// daca a ajuns la margine si daca s-a lovit de propiul ei corp.
+///
+
+///
+/// @defgroup group_pauza Pauza
+///
+/// Jocul poate fi oprit temporar, daca apasati tasta ESCAPE. Ca sa reluati
+/// jocul apasati din nou tasta ESCAPE. Daca vreti sa iesiti din joc in timp
+/// ce sunteti in pauza apasati tasta 'x'.
+///
+
+///
+/// @defgroup group_final Final
+///
+/// Odata ce omida a murit sau ati iesit din joc in timpul unei pauze veti fi 
+/// intampinat de un nou meniu care va afisa scorul obtinut. Nu va fi afisat 
+/// decat 2 secunde. Daca totusi vreti sa il opriti mai repede apasati
+/// tasta ENTER.
+///
+
+///
+/// @page cum_functioneaza Cum functioneaza?
+///
+/// - @ref group_deseneaza_pe_ecran
+/// - @ref group_cum_reprezint_obiectele
+/// - @ref group_meniuri
+/// - @ref group_main_loop
+///
+
+///
+/// @defgroup group_deseneaza_pe_ecran Desenand pe ecran
+///
+/// In primul rand pentru a putea desena orice pe ecran in c++(si nu numai)
+/// trebuie sa creem o fereastra. Procesul de a crea o fereastra este specific
+/// fiecraui sistem de operare. In windows avem la dispozitie functia
+/// CreateWindowEx, in lumea Linux poate fi creata cu ajutorul Xlib/XCB sau
+/// Wayland, iar pe Mac OS o varianta ar fi Cocoa(desi nu este nativ c++
+/// poate fi creat un wrapper cu ajutorul llvm-clang). Jocul meu suporta toate
+/// aceste platforme(poate chiar si android si ios) si totusi nu trebuie
+/// sa contina cod pentru fiecare platforma in parte. Asta datorita faptului
+/// ca foloseste o librarie numita SDL care a facut deja asa ceva. Libraria
+/// este inclusa in proiect. In plus imi ofera si functii pentru a desena
+/// imagini si figuri geometrice simple. Daca nu m-as fi folosit de o astfel
+/// de librarie ar fi trebuit sa folosesc opengl care este suportat pe
+/// multe platforme(dar de ceva timp nu mai este suportat pe ios is Mac OS) sau sa
+/// recurg la mai mult cod care depinde de platforme(direct3d - windows, 
+/// Metal/Quartz - MacOs/ios etc.).
+///
+/// Codul care deschide o fereastra se gaseste in functia @ref initializeaza.
+/// Prima data chem functia SDL_Init care va returna o valoarea negativa daca
+/// va esua, apoi creez efectiv fereastra cu ajutorul SDL_CreateWindow. Primul
+/// parametru este titlul ferestrei, al doilea si al treilea reprezinta
+/// coordonatele unde va fi afisata fereastra, al patrulea si al cincilea
+/// reprezinta lungime si inaltimea ferestrei, iar ultimul nu este atat de
+/// important.
+///
+/// Odata ce am deschis fereastra trebuie sa "activam" posibilitatea de a
+/// desena pe ea. Variabila @ref global::desenator este un pointer catre
+/// un obiect de tip SDL_Renderer, iar pentru a crea efectiv desenatorul
+/// chem functia SDL_CreateRenderer care ia ca parametrii fereastra pe care
+/// vreau sa desenez si anumite "steaguri" pe care vreau sa le setez. In cazul
+/// meu setez SDL_RENDERER_ACCELERATED care va folosi accelerarea hardware daca
+/// va putea, ceea ce va imbunatati performanta considerabil.
+///
+/// Mai jos chem TTF_Init si Mix_OpenAudio care imi ofera posibilitatea de
+/// a desena text pe ecran si de e reda sunet.
+///
+
+///
+/// @defgroup group_cum_reprezint_obiectele Cum reprezint obiectele jocului?
+///
+/// Prima data vom avea nevoie de un mod de a reprezenta omida. Cel mai usor ar
+/// fi sa folosim un vector care tine pozitii ale omizii, primul/ultimul element
+/// fiind capul omizii. Eu folosesc ceva similar dar care imi ofera mult mai
+/// multa flexibilitate si care este si mai rapid si consuma mai putina memorie,
+/// si anume std::deque. Deque inseamna "double ended queue" in engleza si
+/// care este un fel de coada dar care este foarte buna la insertia la inceput
+/// si la sfarsit - exact ce imi trebuie. In spate deque este o lista de vectori
+/// cu o marime fixa(de exemplu 5) care vrea sa aiba avantajele unui vector de
+/// a avea memorie continua si foarte rapid de accesat dar si avantajele unei
+/// liste de a fi foarte eficienta la insertia in mijlocul unui sir.
+///
+/// Omida este stocata in variabila @ref StadiulJocului::pozitii_omida. Tipul
+/// de date folosit pentru a stoca efectiv pozitiil este @ref Punct. De remarcat
+/// este faptul ca retin pozitiile unei matrici(care reprezinta terenul) @ref
+/// StadiulJocului::teren, nu valorile absolute in fereastra. Acest lucru face
+/// mult mai usoara logica jocului.
+///
+/// Cand jocul incepe sunt inserate 3 pozitii in omida. Cand este timpul ca
+/// pozitia omizii sa fie actualizata chem @ref Joc::muta_omida. La fiecare pas
+/// chem @ref deseneaza_omida, care parcurge @ref StadiulJocului::pozitii_omida
+/// si deseneaza fiecare parte a omizii pe ecran.
+///
+/// Pentru a usura munca de a schimba directia omizii folosescu o enumeratie
+/// @ref TipDirectie. Apoi am un vector @ref directie care va tine valorile
+/// cu care trebuie sa incrementez i-ul si j-ul omizii pentru a se deplasa.
+/// Cand omida se deplaseaza inserez la inceputul cozii noua pozitie a capului
+/// in functie de directie. Daca nu a mancat nimic cat s-a deplasat atunci
+/// sterg ultima pozitie din coada.
+///
+/// Pozitia frunzei este retinuta in variabila @ref
+/// StadiulJocului::pozitie_frunza. Cand omida mananca o frunza trebuie
+/// generata o noua pozitie, astfel chem functia @ref genereaza_pozitie_noua.
+/// Aceeasi functie este chemata si atunci cand omida mananca un mar.
+///
+/// Daca jucatorul apasa tasta escape atunci chem functia @ref Joc::pauza.
+///
+
+///
+/// @defgroup group_meniuri Meniuri
+///
+/// Jocul in sine nu este prea complicat. Snake este un joc arhipopular care
+/// are multe implementari. Totusi, problema intervine cand vrem sa avem si
+/// alte "auxiliare" pentru joc, cum ar fi un meniu de start si final. Cum
+/// putem tine separat codul pentru a desena meniuri si cel care tine de
+/// jocul efectiv?
+///
+/// O metoda naiva ar fi sa verificam pur si simplu prin niste if-uri unde ne
+/// aflam. Ceva de genul:
+/// @code{.cpp}
+///  if(este_in_meniu_start) { /* ... */ }
+///  else if(este_in_joc) { /* .. */ }
+///  /* etc */
+/// @endcode
+///
+/// Metoda naiva functioneaza dar este foarte limitata(si urata). Jocurile mult
+/// mai complexe care trebuie sa deseneze un meniu separat numai pentru optiunile
+/// jocului in timp ce are alte submeniuri nu poate functiona asa. Atunci am
+/// implementat conceptul de scene.
+///
+/// O scena este practic un joc intreg. Meniul de start are propria scena,
+/// jocul in sine are propria scena, meniul de final alta scena, etc.
+/// Mai exact, fiecare scena este o clasa care trebuie sa mosteneasca @ref
+/// Scena. O scena trebuie sa aibe 3 functii implementate:
+/// - incarca
+/// - incarcat_deja
+/// - itereaza
+///
+/// @ref Scena::incarca face o initializare a scenei, de exemplu in scena @ref
+/// Joc functia @ref Joc::incarca incarca toate imaginile pentru omida, frunza,
+/// mar, initializeaza matricea jocului etc.
+///
+/// @ref Scena::incarcat_deja este evidenta.
+///
+/// @ref Scena::itereaza este apelata la fiecare pas in @ref group_main_loop.
+///
+/// Scenele sunt stocate in @ref global::scene intr-o coada, la fel ca @ref
+/// StadiulJocului::pozitii_omida sub forma unor pointeri. @ref Scena
+/// este o clasa abstracta deci nu poate fi create direct, decat prin
+/// mostenitori, deci trebuie folositi pointeri. Astfel avem un sistem flexibil
+/// prin care putem reprezenta scene. Vedeti cum sunt folosite exact in @ref
+/// group_main_loop.
+///
+
+///
+/// @defgroup group_main_loop Principala repetitie
+///
+/// In while-ul din functia @ref main se intampla practic tot. Inainte de
+/// while sunt inserate doua obiecte de tip @ref Joc si @ref MeniuStart.
+/// Scenele sunt folosite ca un fel de stiva, ultima scena fiind cea care
+/// trebuie redata. De aceea este inserata prima data scena jocului. Cand vom
+/// iesi din meniul de start va fi sters si va ramane scena jocului. Orice
+/// scena poate iesi complet din aplicatie daca seteaza @ref
+/// global::fereastra_inchisa la fals. O scena va fi stearsa numai daca a fost
+/// initializata, si va fi initializata numai daca nu s-a intamplat deja.
+///
+
+///
+/// @page la_ce_ajuta La ce ajuta?
+///
+/// Un joc in sine nu are ata de multe aplicatii in lumea reala in afara de
+/// entertainment. Totusi consider ca acest proiect reprezinta un foarte bun
+/// inceput pentru oricine vrea sa inceapa programarea grafica. Aceasta are mult
+/// extrem de multe aplicatii precum vizualizarea organelor corpuli uman,
+/// simulari, design etc. "Omida" nu este ceva complex dar este o fundatie
+/// pentru a dezvolta subiecte mai avansate. Chiar si conceptul scenelor intr-un
+/// joc este foarte important deoarece cand vrem sa facem un joc nu ne gandim
+/// prima data la meniu ci la joc in sine. Dupa ce am terminat jocul intervine
+/// problema de reprezentare a meniurilor, conceptul de scena ajutand enorm.
+/// Scenele pot fi extinse si reprezentate ca niste arbori pentru flexibilitate
+/// maxima(de exemplu submeniuri). De asemenea poate fi extins si modul in
+/// care functioneaza @ref main, in loc sa chemam fiecare @ref Scena::itereaza
+/// cu @ref StadiulJocului::timp_trecut variabil, putem stabili un timp maxim
+/// (de exemplu 60fps) cu care sa actualizam scena, folositor in cazul unei
+/// simulari in care legile fizicii depind foarte mult de timpul trecut.
+///
+
+///
+/// @page extra Extra
+///
+/// Codul sursa este complet liber, poate fi gasit la 
+/// https://gitlab.com/librehead/atestat si se afla sub licenta Apache 2.0.
+/// Libraria SDL este si ea open source sub licenta zlib. Documentatia am
+/// generat-o cu ajutorul doxygen, de asemenea proiect open source, sub
+/// licenta GNU General Public License.
 ///
 
 #include <deque>
@@ -101,7 +364,8 @@ enum PosibilitateTeren
 {
     GOL = 0, 
     OMIDA, 
-    FRUNZA
+    FRUNZA,
+    POWERUP
 };
 
 class Scena;
@@ -128,11 +392,11 @@ namespace global {
     ///
     /// @brief Lungimea ferestrei.
     ///
-    constexpr int lungime = 900;
+    constexpr int lungime = 600;
     ///
     /// @brief Inaltimea ferestrei.
     ///
-    constexpr int inaltime = 900;
+    constexpr int inaltime = 600;
 
     ///
     /// Toate scenele sunt pastrate in acest vector.
@@ -149,7 +413,7 @@ namespace global {
     ///     }
     /// @endcode
     ///
-    std::vector<std::unique_ptr<Scena>> scene;
+    std::deque<std::unique_ptr<Scena>> scene;
     ///
     /// De fiecare data cand jucatorul apasa o tasta aceasta e retinuta in aceasta mapa.
     /// Mapa este un fel de vector dar care poate avea altfel de indexare.
@@ -214,6 +478,16 @@ public:
     ///
     Punct pozitie_frunza;
     ///
+    /// @brief Unde se afla powerup-ul.
+    ///
+    /// Un Powerup este un mar, mancare mult mai consistenta pentru omida.
+    ///
+    Punct pozitie_powerup;
+    ///
+    /// @brief Adavarat daca am generat deja un powerup.
+    ///
+    bool exista_powerup = false;
+    ///
     /// @brief Scorul jocului.
     ///
     /// Pentru fiecare frunza mancate scorul creste cu 1.
@@ -241,6 +515,7 @@ public:
     SDL_Texture* textura_capului{ nullptr };
     SDL_Texture* textura_corpului{ nullptr };
     SDL_Texture* textura_frunzei{ nullptr };
+    SDL_Texture* textura_powerup{ nullptr };
 
     SDL_Color culoare_fundal = { 15, 15, 15, 255 };
 };
@@ -254,11 +529,11 @@ class Scena
 {
 public:
     ///
-    /// @brief Initializeza scena.
+    /// Initializeza scena.
     ///
     virtual void incarca(StadiulJocului&) = 0;
     ///
-    /// @brief Verifica daca scena curenta a fost incarcata deja.
+    /// Verifica daca scena curenta a fost incarcata deja.
     ///
     virtual bool incarcat_deja() = 0;
     ///
@@ -267,6 +542,8 @@ public:
     virtual void iesire(StadiulJocului&) = 0;
     ///
     /// @brief Executa functia la fiecare 'desenare'.
+    ///
+    /// @return Adevarat daca iterarea va continua, fals altfel.
     ///
     virtual bool itereaza(StadiulJocului&) = 0;
 
@@ -302,10 +579,19 @@ class Joc : public Scena
     /// @brief Sunetul redat de fiecare data cand omida mananca o frunza.
     ///
     Mix_Chunk* m_sunet_frunza = nullptr;
+    /// 
+    /// @brief Sunetul redat de fiecare data cand omida mananca un powerup.
+    ///
+    Mix_Chunk* m_sunet_powerup = nullptr;
 
+    ///
+    /// Muta omida in directia setata de jucator.
+    ///
+    /// @return Adevarat daca omida nu a murit, fals altfel.
+    ///
     bool muta_omida(StadiulJocului&);
     ///
-    /// @brief Ruleaza cat timp jocul e in pauza.
+    /// Ruleaza cat timp jocul e in pauza.
     ///
     /// @return Fals daca jucatorul a iesit din joc in timpul pauzei sau adevarat altfel.
     ///
@@ -324,6 +610,8 @@ class Joc : public Scena
     /// @return Fals daca jocul nu mai trebuie sa continue.
     ///
     bool verifica_taste_apasate(StadiulJocului&);
+
+    long long m_timp_powerup = 0LL;
 
 public:
     virtual void iesire(StadiulJocului&) override;
@@ -382,6 +670,8 @@ class MeniuFinal : public Scena
     TTF_Font* m_font = nullptr;
     SDL_Texture* m_text = nullptr;
 
+    long long m_timp_asteptat = 0LL;
+
 public:
     virtual void iesire(StadiulJocului&) override;
     virtual void incarca(StadiulJocului&) override;
@@ -418,17 +708,24 @@ void deseneaza_frunza(StadiulJocului&);
 ///
 /// @brief Deseneaza intreaga omida.
 ///
+/// Parcurge @ref StadiulJocului::pozitii_omida si deseneaza fiecare parte
+/// a omizii.
+///
 void deseneaza_omida(StadiulJocului&);
+///
+/// @brief Deseneaza powerup-ul(un mar) pe ecran.
+///
+void deseneaza_powerup(StadiulJocului&);
 ///
 /// @brief Pune textura data la pozitia data.
 ///
 void deseneaza_textura(SDL_Texture* textura, int, int);
 ///
-/// @brief Returneaza un punct la nimereala cu conditia ca in acea pozitie in matricesa nu fie nimic.
+/// Returneaza un punct la nimereala cu conditia ca in acea pozitie in matricesa nu fie nimic.
 ///
 Punct genereaza_pozitie_noua(StadiulJocului& stadiu);
 ///
-/// @brief Creeaza fereastra si desenatorul.
+/// Creeaza fereastra si desenatorul.
 ///
 void initializeaza();
 ///
@@ -441,6 +738,9 @@ void marcheaza_frunza(StadiulJocului&);
 ///
 void verifica_evenimente();
 
+///
+/// Toata magia se intampla aici.
+///
 int main()
 {
     initializeaza();
@@ -547,6 +847,22 @@ void deseneaza_omida(StadiulJocului& stadiu)
         );
         ++iterator;
     }
+}
+
+void deseneaza_powerup(StadiulJocului& stadiu) {
+    //SDL_Rect dest = 
+    //        { stadiu.pozitie_powerup.j * StadiulJocului::lungime_textura,
+    //          stadiu.pozitie_powerup.i * StadiulJocului::inaltime_textura,
+    //          StadiulJocului::lungime_textura,
+    //          StadiulJocului::inaltime_textura };
+
+    //SDL_SetRenderDrawColor(global::desenator, 0, 255, 0, 255);
+    //SDL_RenderFillRect(global::desenator, &dest);
+    deseneaza_textura(
+            stadiu.textura_powerup,
+            stadiu.pozitie_powerup.j * StadiulJocului::lungime_textura,
+            stadiu.pozitie_powerup.i * StadiulJocului::inaltime_textura
+    );
 }
 
 Punct genereaza_pozitie_noua(StadiulJocului& stadiu)
@@ -665,9 +981,10 @@ bool Joc::muta_omida(StadiulJocului& stadiu)
     PosibilitateTeren& ce_urmeaza = stadiu.teren[pozitie_cap.i][pozitie_cap.j];
 
     switch(ce_urmeaza) {
-        case PosibilitateTeren::OMIDA:
+        case PosibilitateTeren::OMIDA: {
             return false;
-        case PosibilitateTeren::FRUNZA:
+        }
+        case PosibilitateTeren::FRUNZA: {
             Mix_PlayChannel(-1, m_sunet_frunza, 0);
             ++stadiu.scor;
 
@@ -676,8 +993,19 @@ bool Joc::muta_omida(StadiulJocului& stadiu)
 
             ce_urmeaza = PosibilitateTeren::OMIDA;
             stadiu.pozitii_omida.push_front(pozitie_cap);
-            return true;
-        case PosibilitateTeren::GOL:
+            return true; 
+        }
+        case PosibilitateTeren::POWERUP: {
+            Mix_PlayChannel(-1, m_sunet_powerup, 0);
+            stadiu.scor += 10;
+
+            ce_urmeaza = PosibilitateTeren::OMIDA;
+            stadiu.pozitii_omida.push_front(pozitie_cap);
+            stadiu.exista_powerup = false;
+
+            break;
+        }
+        case PosibilitateTeren::GOL: {
             ce_urmeaza = PosibilitateTeren::OMIDA;
             stadiu.pozitii_omida.push_front(pozitie_cap);
            
@@ -686,6 +1014,7 @@ bool Joc::muta_omida(StadiulJocului& stadiu)
             stadiu.pozitii_omida.pop_back();
             
             return true;
+        }
     }
 
     return true;
@@ -777,23 +1106,30 @@ void Joc::incarca(StadiulJocului& stadiu)
     SDL_Surface* cap = IMG_Load("./IMG/cap.png");
     SDL_Surface* corp = IMG_Load("./IMG/corp.png");
     SDL_Surface* frunza = IMG_Load("./IMG/frunza.png");
+    SDL_Surface* powerup = IMG_Load("./IMG/mar.png");
 
     SDL_SetColorKey(cap, SDL_TRUE, SDL_MapRGB(cap->format, 0, 0, 0));
-    SDL_SetColorKey(corp, SDL_TRUE, SDL_MapRGB(cap->format, 0, 0, 0));
-    SDL_SetColorKey(frunza, SDL_TRUE, SDL_MapRGB(cap->format, 0, 0, 0));
+    SDL_SetColorKey(corp, SDL_TRUE, SDL_MapRGB(corp->format, 0, 0, 0));
+    SDL_SetColorKey(frunza, SDL_TRUE, SDL_MapRGB(frunza->format, 0, 0, 0));
+    SDL_SetColorKey(powerup, SDL_TRUE, SDL_MapRGB(powerup->format, 0, 0, 0));
 
     stadiu.textura_capului = SDL_CreateTextureFromSurface(global::desenator, cap);
     stadiu.textura_corpului = SDL_CreateTextureFromSurface(global::desenator, corp);
     stadiu.textura_frunzei = SDL_CreateTextureFromSurface(global::desenator, frunza);
+    stadiu.textura_powerup = SDL_CreateTextureFromSurface(global::desenator, powerup);
     
     if(!stadiu.textura_capului 
             || !stadiu.textura_corpului
-            || !stadiu.textura_frunzei) 
+            || !stadiu.textura_frunzei
+            || !stadiu.textura_powerup) 
     { 
         std::cout << "Nu s-au putut incarca texturile!\n"; 
     }
     
     reseteaza_teren(stadiu);
+    stadiu.directia_omizii = TipDirectie::SUS;
+    stadiu.pozitii_omida.clear();
+    stadiu.scor = 0;
 
     stadiu.pozitii_omida.push_back(
         { StadiulJocului::inaltime_teren / 2 - 1, StadiulJocului::lungime_teren / 2 - 1 }
@@ -821,6 +1157,7 @@ void Joc::incarca(StadiulJocului& stadiu)
     }
 
     m_sunet_frunza = Mix_LoadWAV("./audio/frunza.wav");
+    m_sunet_powerup = Mix_LoadWAV("./audio/powerup.wav");
 
     if(!m_sunet_frunza) {
         std::cout << "Nu s-a putut incarca sunetul!\n";
@@ -843,29 +1180,47 @@ bool Joc::itereaza(StadiulJocului& stadiu)
     continua = verifica_taste_apasate(stadiu);
 
     m_timp_asteptat += stadiu.timp_trecut;
+    m_timp_powerup += stadiu.timp_trecut;
 
     if(m_timp_asteptat >= StadiulJocului::timp_asteptare_maxim) {
         stadiu.directia_omizii = noua_directie_a_omizii;
         continua = muta_omida(stadiu);
         m_timp_asteptat = 0LL;
     }
+    if(m_timp_powerup >= 20000LL) {
+        if(!stadiu.exista_powerup) {
+            stadiu.pozitie_powerup = genereaza_pozitie_noua(stadiu);
+            stadiu.teren
+                [stadiu.pozitie_powerup.i]
+                [stadiu.pozitie_powerup.j] = PosibilitateTeren::POWERUP;
+            stadiu.exista_powerup = true;
+        }
+
+        m_timp_powerup = 0LL;
+    }
 
     deseneaza_omida(stadiu);
     deseneaza_frunza(stadiu);
     pune_scor(stadiu);
 
+    if(stadiu.exista_powerup) {
+        deseneaza_powerup(stadiu);
+    }
+
     return continua;
 }
 
-void Joc::iesire(StadiulJocului& stadiu) 
-{ 
-    std::cout << "Scor: " << stadiu.scor << '\n';
+void Joc::iesire(StadiulJocului&/* stadiu*/)
+{
+    //std::cout << "Scor: " << stadiu.scor << '\n';
 
     Mix_FreeChunk(m_sunet_frunza);
 
     TTF_CloseFont(m_font);
     auto a = global::desenator;
     (void)a;
+
+    global::scene.emplace_front(new MeniuFinal);
 }
 
 bool MeniuStart::click_in_meniu()
@@ -1030,19 +1385,60 @@ bool MeniuStart::itereaza(StadiulJocului& stadiu)
 }
 
 void MeniuFinal::iesire(StadiulJocului&)
-{}
-
-void MeniuFinal::incarca(StadiulJocului&)
 {
+    TTF_CloseFont(m_font);
+    SDL_DestroyTexture(m_text);
+}
+
+void MeniuFinal::incarca(StadiulJocului& stadiu)
+{
+    m_font = TTF_OpenFont("./font/hinted-ElaineSans-Medium.ttf", 70);
+
+    std::string mesaj = " Scor: ";
+
+    mesaj += std::to_string(stadiu.scor);
+
+    SDL_Surface* text = TTF_RenderText_Blended_Wrapped(
+            m_font, 
+            mesaj.c_str(),
+            { 255, 255, 255, 255 },
+            600
+    );
+
+    m_text = SDL_CreateTextureFromSurface(global::desenator, text);
+
+    SDL_FreeSurface(text);
+
     m_incarcat_deja = true;
 }
 
 bool MeniuFinal::incarcat_deja()
 { return m_incarcat_deja; }
 
-bool MeniuFinal::itereaza(StadiulJocului&)
+bool MeniuFinal::itereaza(StadiulJocului& stadiu)
 {
     bool continua = true;
+
+    if(a_apasat(SDL_SCANCODE_RETURN)
+            || m_timp_asteptat > 2000LL)
+    {
+        global::scene.emplace_front(new MeniuStart);
+        global::scene.emplace_front(new Joc);
+        continua = false;
+    }
+    if(a_apasat(SDL_SCANCODE_ESCAPE)) {
+        continua = false;
+    }
+
+    SDL_Rect destinatie;
+    destinatie.x = global::lungime / 3;
+    destinatie.y = global::inaltime / 2 - global::inaltime / 16;
+    destinatie.w = global::lungime / 3;
+    destinatie.h = global::inaltime / 8;
+
+    SDL_RenderCopy(global::desenator, m_text, nullptr, &destinatie);
+
+    m_timp_asteptat += stadiu.timp_trecut;
 
     return continua;
 }

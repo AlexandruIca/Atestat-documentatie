@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['genereaza_5fpozitie_5fnoua',['genereaza_pozitie_noua',['../main_8cpp.html#a5f6f5f86af147286478cc7aadd76b0a2',1,'main.cpp']]],
-  ['global',['global',['../namespaceglobal.html',1,'']]]
+  ['exista_5fpowerup',['exista_powerup',['../classStadiulJocului.html#af47424386a19c4f87d45843896a39564',1,'StadiulJocului']]],
+  ['extra',['Extra',['../extra.html',1,'index']]]
 ];

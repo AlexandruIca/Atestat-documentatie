@@ -92,17 +92,12 @@ Metode Publice</h2></td></tr>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeniuFinal.html#a1effd96032aadf141533119115dbbe91">iesire</a> (<a class="el" href="classStadiulJocului.html">StadiulJocului</a> &amp;) override</td></tr>
 <tr class="memdesc:a1effd96032aadf141533119115dbbe91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paraseste scena. <br /></td></tr>
 <tr class="separator:a1effd96032aadf141533119115dbbe91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a1f2a872c6d0cef0e3f0a8e1545f5de"><td class="memItemLeft" align="right" valign="top"><a id="a4a1f2a872c6d0cef0e3f0a8e1545f5de"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeniuFinal.html#a4a1f2a872c6d0cef0e3f0a8e1545f5de">incarca</a> (<a class="el" href="classStadiulJocului.html">StadiulJocului</a> &amp;) override</td></tr>
-<tr class="memdesc:a4a1f2a872c6d0cef0e3f0a8e1545f5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializeza scena. <br /></td></tr>
+<tr class="memitem:a4a1f2a872c6d0cef0e3f0a8e1545f5de"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeniuFinal.html#a4a1f2a872c6d0cef0e3f0a8e1545f5de">incarca</a> (<a class="el" href="classStadiulJocului.html">StadiulJocului</a> &amp;) override</td></tr>
 <tr class="separator:a4a1f2a872c6d0cef0e3f0a8e1545f5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72edd47d4783b321124d7d7af74b9ef8"><td class="memItemLeft" align="right" valign="top"><a id="a72edd47d4783b321124d7d7af74b9ef8"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeniuFinal.html#a72edd47d4783b321124d7d7af74b9ef8">incarcat_deja</a> () override</td></tr>
-<tr class="memdesc:a72edd47d4783b321124d7d7af74b9ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica daca scena curenta a fost incarcata deja. <br /></td></tr>
+<tr class="memitem:a72edd47d4783b321124d7d7af74b9ef8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeniuFinal.html#a72edd47d4783b321124d7d7af74b9ef8">incarcat_deja</a> () override</td></tr>
 <tr class="separator:a72edd47d4783b321124d7d7af74b9ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ee1a22d9df62f0828961d38e05f8aa4"><td class="memItemLeft" align="right" valign="top"><a id="a9ee1a22d9df62f0828961d38e05f8aa4"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeniuFinal.html#a9ee1a22d9df62f0828961d38e05f8aa4">itereaza</a> (<a class="el" href="classStadiulJocului.html">StadiulJocului</a> &amp;) override</td></tr>
-<tr class="memdesc:a9ee1a22d9df62f0828961d38e05f8aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa functia la fiecare 'desenare'. <br /></td></tr>
+<tr class="memitem:a9ee1a22d9df62f0828961d38e05f8aa4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeniuFinal.html#a9ee1a22d9df62f0828961d38e05f8aa4">itereaza</a> (<a class="el" href="classStadiulJocului.html">StadiulJocului</a> &amp;) override</td></tr>
+<tr class="memdesc:a9ee1a22d9df62f0828961d38e05f8aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa functia la fiecare 'desenare'.  <a href="#a9ee1a22d9df62f0828961d38e05f8aa4">Mai mult...</a><br /></td></tr>
 <tr class="separator:a9ee1a22d9df62f0828961d38e05f8aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -116,13 +111,115 @@ TTF_Font *&#160;</td><td class="memItemRight" valign="bottom"><b>m_font</b> = nu
 <tr class="memitem:a79c050764da86c93f5554265a7567036"><td class="memItemLeft" align="right" valign="top"><a id="a79c050764da86c93f5554265a7567036"></a>
 SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><b>m_text</b> = nullptr</td></tr>
 <tr class="separator:a79c050764da86c93f5554265a7567036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907b4ebca32688dad8e1682aeaeb9857"><td class="memItemLeft" align="right" valign="top"><a id="a907b4ebca32688dad8e1682aeaeb9857"></a>
+long long&#160;</td><td class="memItemRight" valign="bottom"><b>m_timp_asteptat</b> = 0LL</td></tr>
+<tr class="separator:a907b4ebca32688dad8e1682aeaeb9857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descriere Detaliată</h2>
 <div class="textblock"><p>Meniul care va fi afisat dupa terminarea unui joc. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00378">378</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-</div><hr/>Documentaţia pentru această clasă a fost generată din fişierul:<ul>
-<li>/media/MHDD/devel/atestat_info/<a class="el" href="main_8cpp_source.html">main.cpp</a></li>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00666">666</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+</div><h2 class="groupheader">Documentaţia Funcţiilor Membre</h2>
+<a id="a4a1f2a872c6d0cef0e3f0a8e1545f5de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a1f2a872c6d0cef0e3f0a8e1545f5de">&#9670;&nbsp;</a></span>incarca()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MeniuFinal::incarca </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classStadiulJocului.html">StadiulJocului</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initializeza scena. </p>
+
+<p>Implementează <a class="el" href="classScena.html#a6f53a1dcef68084361dc8f9d56bbb8c0">Scena</a>.</p>
+
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l01393">1393</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00385">global::desenator</a> şi <a class="el" href="main_8cpp_source.html#l00495">StadiulJocului::scor</a>.</p>
+
+</div>
+</div>
+<a id="a72edd47d4783b321124d7d7af74b9ef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72edd47d4783b321124d7d7af74b9ef8">&#9670;&nbsp;</a></span>incarcat_deja()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MeniuFinal::incarcat_deja </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Verifica daca scena curenta a fost incarcata deja. </p>
+
+<p>Implementează <a class="el" href="classScena.html#ac8de771024795dffa0e5feb8dba881ff">Scena</a>.</p>
+
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l01415">1415</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ee1a22d9df62f0828961d38e05f8aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ee1a22d9df62f0828961d38e05f8aa4">&#9670;&nbsp;</a></span>itereaza()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MeniuFinal::itereaza </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classStadiulJocului.html">StadiulJocului</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executa functia la fiecare 'desenare'. </p>
+<dl class="section return"><dt>Întoarce</dt><dd>Adevarat daca iterarea va continua, fals altfel. </dd></dl>
+
+<p>Implementează <a class="el" href="classScena.html#a9e5fcc831ed410b5b2422231ede746ee">Scena</a>.</p>
+
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l01418">1418</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00792">a_apasat()</a>, <a class="el" href="main_8cpp_source.html#l00385">global::desenator</a>, <a class="el" href="main_8cpp_source.html#l00399">global::inaltime</a>, <a class="el" href="main_8cpp_source.html#l00395">global::lungime</a>, <a class="el" href="main_8cpp_source.html#l00416">global::scene</a> şi <a class="el" href="main_8cpp_source.html#l00500">StadiulJocului::timp_trecut</a>.</p>
+
+</div>
+</div>
+<hr/>Documentaţia pentru această clasă a fost generată din fişierul:<ul>
+<li><a class="el" href="main_8cpp_source.html">main.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->

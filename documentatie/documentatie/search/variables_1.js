@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fereastra',['fereastra',['../namespaceglobal.html#a07963dc89966c80411e6a3c896c07c10',1,'global']]],
-  ['fereastra_5finchisa',['fereastra_inchisa',['../namespaceglobal.html#a930b1255fa49cd41dc635136822d56ee',1,'global']]]
+  ['exista_5fpowerup',['exista_powerup',['../classStadiulJocului.html#af47424386a19c4f87d45843896a39564',1,'StadiulJocului']]]
 ];

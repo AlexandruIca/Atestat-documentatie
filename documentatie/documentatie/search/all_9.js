@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['pagina_20principala_2e',['Pagina principala.',['../index.html',1,'']]],
-  ['pauza',['pauza',['../classJoc.html#a0f90008558e8cbed6537b542f79ae55b',1,'Joc']]],
-  ['posibilitateteren',['PosibilitateTeren',['../main_8cpp.html#a67b02df562611307c1e3adeace56d13e',1,'main.cpp']]],
-  ['pozitie_5ffrunza',['pozitie_frunza',['../classStadiulJocului.html#a141067404f3678036ee7a91a02532a30',1,'StadiulJocului']]],
-  ['pozitii_5fomida',['pozitii_omida',['../classStadiulJocului.html#a64e0608d9c68b22ea83fd5aba209453f',1,'StadiulJocului']]],
-  ['punct',['Punct',['../structPunct.html',1,'Punct'],['../structPunct.html#a04070b9c9925f7f4a117ecec3d3338af',1,'Punct::Punct()=default'],['../structPunct.html#a2ff34bc87cb16eae3d747ff63d51bff0',1,'Punct::Punct(int t_i, int t_j)'],['../structPunct.html#afa529a8fdfbc33103f357f754ba4105e',1,'Punct::Punct(const Punct &amp;)=default']]],
-  ['pune_5fscor',['pune_scor',['../classJoc.html#a8e709a64cfcd3277975fb58f1bff3cd1',1,'Joc']]]
+  ['meniu_20start',['Meniu start',['../group__group__meniu__start.html',1,'']]],
+  ['meniuri',['Meniuri',['../group__group__meniuri.html',1,'']]],
+  ['m_5ffont',['m_font',['../classJoc.html#afda2880b237b18b8bdd4f25c5817adb4',1,'Joc']]],
+  ['m_5fsunet_5ffrunza',['m_sunet_frunza',['../classJoc.html#ac92412a0e2de93936c4c600a7efe45f4',1,'Joc']]],
+  ['m_5fsunet_5fpowerup',['m_sunet_powerup',['../classJoc.html#aec45d2779304b9ee3ba5c3962a66323b',1,'Joc']]],
+  ['m_5ftimp_5fasteptat',['m_timp_asteptat',['../classJoc.html#a24e667d511404dd6479a86575f0969c2',1,'Joc']]],
+  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['marcheaza_5ffrunza',['marcheaza_frunza',['../main_8cpp.html#a525009107790f4daffd5481e33cb039f',1,'main.cpp']]],
+  ['meniufinal',['MeniuFinal',['../classMeniuFinal.html',1,'']]],
+  ['meniustart',['MeniuStart',['../classMeniuStart.html',1,'']]],
+  ['muta_5fomida',['muta_omida',['../classJoc.html#afd69d2cd19f6d2ac2b1a42a4685349e6',1,'Joc']]]
 ];

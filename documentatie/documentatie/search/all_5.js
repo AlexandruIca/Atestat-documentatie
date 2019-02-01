@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['j',['j',['../structPunct.html#a065a30931a1d15d6f6c638c4888d254e',1,'Punct']]],
-  ['joc',['Joc',['../classJoc.html',1,'']]]
+  ['genereaza_5fpozitie_5fnoua',['genereaza_pozitie_noua',['../main_8cpp.html#a5f6f5f86af147286478cc7aadd76b0a2',1,'main.cpp']]],
+  ['global',['global',['../namespaceglobal.html',1,'']]]
 ];

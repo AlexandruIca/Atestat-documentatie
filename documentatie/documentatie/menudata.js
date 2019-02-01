@@ -1,5 +1,7 @@
 var menudata={children:[
 {text:"Pagina principală",url:"index.html"},
+{text:"Pagini înrudite",url:"pages.html"},
+{text:"Module",url:"modules.html"},
 {text:"Namespace-uri",url:"namespaces.html",children:[
 {text:"Lista de Namespace-uri",url:"namespaces.html"},
 {text:"Membrii Namespace-ului",url:"namespacemembers.html",children:[
@@ -12,6 +14,7 @@ var menudata={children:[
 {text:"Membrii Componenţi",url:"functions.html",children:[
 {text:"Toate",url:"functions.html",children:[
 {text:"d",url:"functions.html#index_d"},
+{text:"e",url:"functions.html#index_e"},
 {text:"i",url:"functions.html#index_i"},
 {text:"j",url:"functions.html#index_j"},
 {text:"l",url:"functions.html#index_l"},

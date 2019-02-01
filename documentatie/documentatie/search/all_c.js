@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['taste_5fapasate',['taste_apasate',['../namespaceglobal.html#a6da5c1308adb9fdac1c61389b139dc54',1,'global']]],
-  ['teren',['teren',['../classStadiulJocului.html#a2e71823589e83f16593f8a2870c065e6',1,'StadiulJocului']]],
-  ['timp_5fasteptare_5fmaxim',['timp_asteptare_maxim',['../classStadiulJocului.html#a4cdf9582b472e74980e1eee73ca94769',1,'StadiulJocului']]],
-  ['timp_5ftrecut',['timp_trecut',['../classStadiulJocului.html#a338b9e5467ad6d4d355c3978e04d32d6',1,'StadiulJocului']]],
-  ['tipdirectie',['TipDirectie',['../main_8cpp.html#aea66a0d525bf9bfb9b61e9cc1ba0b752',1,'main.cpp']]]
+  ['principala_20repetitie',['Principala repetitie',['../group__group__main__loop.html',1,'']]],
+  ['pauza',['Pauza',['../group__group__pauza.html',1,'']]],
+  ['pauza',['pauza',['../classJoc.html#a0f90008558e8cbed6537b542f79ae55b',1,'Joc']]],
+  ['posibilitateteren',['PosibilitateTeren',['../main_8cpp.html#a67b02df562611307c1e3adeace56d13e',1,'main.cpp']]],
+  ['pozitie_5ffrunza',['pozitie_frunza',['../classStadiulJocului.html#a141067404f3678036ee7a91a02532a30',1,'StadiulJocului']]],
+  ['pozitie_5fpowerup',['pozitie_powerup',['../classStadiulJocului.html#a9e472dcc33fa67d1b5e000576133c3ac',1,'StadiulJocului']]],
+  ['pozitii_5fomida',['pozitii_omida',['../classStadiulJocului.html#a64e0608d9c68b22ea83fd5aba209453f',1,'StadiulJocului']]],
+  ['punct',['Punct',['../structPunct.html',1,'Punct'],['../structPunct.html#a04070b9c9925f7f4a117ecec3d3338af',1,'Punct::Punct()=default'],['../structPunct.html#a2ff34bc87cb16eae3d747ff63d51bff0',1,'Punct::Punct(int t_i, int t_j)'],['../structPunct.html#afa529a8fdfbc33103f357f754ba4105e',1,'Punct::Punct(const Punct &amp;)=default']]],
+  ['pune_5fscor',['pune_scor',['../classJoc.html#a8e709a64cfcd3277975fb58f1bff3cd1',1,'Joc']]]
 ];
