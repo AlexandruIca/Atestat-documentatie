@@ -1,0 +1,6 @@
+<map id="Ierarhia Claselor în mod grafic" name="Ierarhia Claselor în mod grafic">
+<area shape="rect" id="node1" href="$classScena.html" title="Interfata pentru toate scenele. " alt="" coords="5,56,64,83"/>
+<area shape="rect" id="node2" href="$classJoc.html" title="Scena jocului in sine. " alt="" coords="133,5,176,32"/>
+<area shape="rect" id="node3" href="$classMeniuFinal.html" title="Meniul care va fi afisat dupa terminarea unui joc. " alt="" coords="112,56,197,83"/>
+<area shape="rect" id="node4" href="$classMeniuStart.html" title="Defineste meniul afisat la deschiderea jocului. " alt="" coords="112,107,197,133"/>
+</map>

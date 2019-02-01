@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Omida: Legenda grafului</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Omida
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat de Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Caută');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Caută');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Legenda grafului</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>Această pagină arată modul în care trebuie să interpretaţi grafurile generate de doxygen.</p>
+<p>Consideraţi următorul exemplu: </p><div class="fragment"><div class="line">/*! Clasă invizibilă, tăiată din cauza depăşirii spaţiului */</div><div class="line">class Invisible { };</div><div class="line"></div><div class="line">/*! Altă clasă tăiată, relaţia de moştenire este ascunsă */</div><div class="line">class Truncated : public Invisible { };</div><div class="line"></div><div class="line">/* Clasă necomentată în stil doxygen */</div><div class="line">class Undocumented { };</div><div class="line"></div><div class="line">/*! Clasă care este moştenită în mod public */</div><div class="line">class PublicBase : public Truncated { };</div><div class="line"></div><div class="line">/*! Clasă template */</div><div class="line">template&lt;class T&gt; class Templ { };</div><div class="line"></div><div class="line">/*! Clasă care este moştenită în mod protejat */</div><div class="line">class ProtectedBase { };</div><div class="line"></div><div class="line">/*! Clasă care este moştenită în mod privat */</div><div class="line">class PrivateBase { };</div><div class="line"></div><div class="line">/*! Clasă care este folosită de clasa Inherited */</div><div class="line">class Used { };</div><div class="line"></div><div class="line">/*! Superclasă care moşteneşte un număr de alte clase */</div><div class="line">class Inherited : public PublicBase,</div><div class="line">                  protected ProtectedBase,</div><div class="line">                  private PrivateBase,</div><div class="line">                  public Undocumented,</div><div class="line">                  public Templ&lt;int&gt;</div><div class="line">{</div><div class="line">  private:</div><div class="line">    Used *m_usedClass;</div><div class="line">};</div></div><!-- fragment --><p> Dacă tagul <code>MAX_DOT_GRAPH_HEIGHT</code> din fişierul de configurare este setat la 200, acesta este graful rezultat:</p>
+<center><div class="image">
+<img src="graph_legend.png"/>
+</div>
+</center> <p>Căsuţele din partea de sus au următoarea semnificaţie: </p><ul>
+<li>
+O căsuţă neagră reprezintă structura sau clasa pentru care graful este generat. </li>
+<li>
+O căsuţă cu marginea neagră reprezintă o structură sau o clasă documentate. </li>
+<li>
+O căsuţă cu marginea gri reprezintă o structură sau o clasă nedocumentate. </li>
+<li>
+O căsuţă cu marginea roşie reprezintă o structură sau o clasă documentate, pentru care nu toate relaţiile de moştenire/incluziune sunt arătate. Un graf este tăiat dacă nu încape în marginile specificate.</li>
+</ul>
+<p>Săgeţile au următoarea semnificaţie: </p><ul>
+<li>
+O săgeată de un albastru închis este folosită când avem o relaţie de moştenire publică între două clase. </li>
+<li>
+O săgeată de un verde închis este folosită când avem o moştenire protejată. </li>
+<li>
+O săgeată de un roşu închis este folosită când avem o moştenire privată. </li>
+<li>
+O săgeată violetă punctată este folosită pentru o clasă conţinută sau folosită de o altă clasă. Săgeata este marcată cu variabila(e) prin care este accesibilă clasa sau structura spre care este îndreptată. </li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.13-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Omida
+</small></address>
+</body>
+</html>
