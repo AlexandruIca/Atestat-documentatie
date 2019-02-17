@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Omida: Desenand pe ecran</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Omida
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat de Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Caută');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Caută');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Desenand pe ecran</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>In primul rand pentru a putea desena orice pe ecran in c++(si nu numai) trebuie sa creem o fereastra. Procesul de a crea o fereastra este specific fiecraui sistem de operare. In windows avem la dispozitie functia CreateWindowEx, in lumea Linux poate fi creata cu ajutorul Xlib/XCB sau Wayland, iar pe Mac OS o varianta ar fi Cocoa(desi nu este nativ c++ poate fi creat un wrapper cu ajutorul llvm-clang). Jocul meu suporta toate aceste platforme(poate chiar si android si ios) si totusi nu trebuie sa contina cod pentru fiecare platforma in parte. Asta datorita faptului ca foloseste o librarie numita SDL care a facut deja asa ceva. Libraria este inclusa in proiect. In plus imi ofera si functii pentru a desena imagini si figuri geometrice simple. Daca nu m-as fi folosit de o astfel de librarie ar fi trebuit sa folosesc opengl care este suportat pe multe platforme(dar de ceva timp nu mai este suportat pe ios is Mac OS) sau sa recurg la mai mult cod care depinde de platforme(direct3d - windows, Metal/Quartz - MacOs/ios etc.).</p>
+<p>Codul care deschide o fereastra se gaseste in functia <a class="el" href="main_8cpp.html#a81cdc1223b468897943076b72f048133">initializeaza</a>. Prima data chem functia SDL_Init care va returna o valoarea negativa daca va esua, apoi creez efectiv fereastra cu ajutorul SDL_CreateWindow. Primul parametru este titlul ferestrei, al doilea si al treilea reprezinta coordonatele unde va fi afisata fereastra, al patrulea si al cincilea reprezinta lungime si inaltimea ferestrei, iar ultimul nu este atat de important.</p>
+<p>Odata ce am deschis fereastra trebuie sa "activam" posibilitatea de a desena pe ea. Variabila <a class="el" href="namespaceglobal.html#ae80ab1c7d78e562614d35c3b78e44ea3">global::desenator</a> este un pointer catre un obiect de tip SDL_Renderer, iar pentru a crea efectiv desenatorul chem functia SDL_CreateRenderer care ia ca parametrii fereastra pe care vreau sa desenez si anumite "steaguri" pe care vreau sa le setez. In cazul meu setez SDL_RENDERER_ACCELERATED care va folosi accelerarea hardware daca va putea, ceea ce va imbunatati performanta considerabil.</p>
+<p>Mai jos chem TTF_Init si Mix_OpenAudio care imi ofera posibilitatea de a desena text pe ecran si de e reda sunet. </p>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.13-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Omida
+</small></address>
+</body>
+</html>

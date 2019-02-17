@@ -1,0 +1,5 @@
+<map id="Scena" name="Scena">
+<area shape="rect" id="node2" href="$classJoc.html" title="Scena jocului in sine. " alt="" coords="5,80,48,107"/>
+<area shape="rect" id="node3" href="$classMeniuFinal.html" title="Meniul care va fi afisat dupa terminarea unui joc. " alt="" coords="72,80,157,107"/>
+<area shape="rect" id="node4" href="$classMeniuStart.html" title="Defineste meniul afisat la deschiderea jocului. " alt="" coords="181,80,267,107"/>
+</map>
