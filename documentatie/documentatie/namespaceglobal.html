@@ -104,9 +104,9 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 <p>Nu putem desena direct in fereastra dar SDL ne ofera posibilitatea sa creem un 'desenator' care va desena efectiv figuri geometrice/texturi. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00385">385</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00387">387</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l00795">deseneaza_textura()</a>, <a class="el" href="main_8cpp_source.html#l01213">Joc::iesire()</a>, <a class="el" href="main_8cpp_source.html#l01104">Joc::incarca()</a>, <a class="el" href="main_8cpp_source.html#l01284">MeniuStart::incarca()</a>, <a class="el" href="main_8cpp_source.html#l01393">MeniuFinal::incarca()</a>, <a class="el" href="main_8cpp_source.html#l00888">initializeaza()</a>, <a class="el" href="main_8cpp_source.html#l01318">MeniuStart::itereaza()</a>, <a class="el" href="main_8cpp_source.html#l01418">MeniuFinal::itereaza()</a>, <a class="el" href="main_8cpp_source.html#l00744">main()</a> şi <a class="el" href="main_8cpp_source.html#l01040">Joc::pune_scor()</a>.</p>
+<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l00819">deseneaza_textura()</a>, <a class="el" href="main_8cpp_source.html#l01128">Joc::incarca()</a>, <a class="el" href="main_8cpp_source.html#l01304">MeniuStart::incarca()</a>, <a class="el" href="main_8cpp_source.html#l01436">MeniuFinal::incarca()</a>, <a class="el" href="main_8cpp_source.html#l00912">initializeaza()</a>, <a class="el" href="main_8cpp_source.html#l01338">MeniuStart::itereaza()</a>, <a class="el" href="main_8cpp_source.html#l00768">main()</a> şi <a class="el" href="main_8cpp_source.html#l01064">Joc::pune_scor()</a>.</p>
 
 </div>
 </div>
@@ -123,9 +123,9 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 <p>Devine adevarat cand jucatorul inchide fereastra de tot. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00390">390</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00392">392</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l01213">Joc::iesire()</a>, <a class="el" href="main_8cpp_source.html#l01318">MeniuStart::itereaza()</a>, <a class="el" href="main_8cpp_source.html#l00744">main()</a> şi <a class="el" href="main_8cpp_source.html#l00924">verifica_evenimente()</a>.</p>
+<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l01237">Joc::iesire()</a>, <a class="el" href="main_8cpp_source.html#l01338">MeniuStart::itereaza()</a>, <a class="el" href="main_8cpp_source.html#l00768">main()</a> şi <a class="el" href="main_8cpp_source.html#l00948">verifica_evenimente()</a>.</p>
 
 </div>
 </div>
@@ -141,9 +141,9 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
       </table>
 </div><div class="memdoc">
 <p>Toate scenele sunt pastrate in acest vector. Clasa <a class="el" href="classScena.html">Scena</a> ofera o interfata comuna pe care orice scena(care e de fapt o alta aplicatie, de exemplu meniul de inceput/pauza) trebuie sa o urmeze. Utilizarea arata cam asa: </p><div class="fragment"><div class="line"><span class="keywordflow">while</span>(!<a class="code" href="namespaceglobal.html#a930b1255fa49cd41dc635136822d56ee">global::fereastra_inchisa</a>) {</div><div class="line">    <a class="code" href="namespaceglobal.html#af4564594d950b73d4bb81b8c0a4fe029">global::scene</a>.back()-&gt;incarca();</div><div class="line">    </div><div class="line">    <span class="keywordflow">while</span>(<a class="code" href="namespaceglobal.html#af4564594d950b73d4bb81b8c0a4fe029">global::scene</a>.back()-&gt;itereaza()) {}</div><div class="line">    </div><div class="line">    <a class="code" href="namespaceglobal.html#af4564594d950b73d4bb81b8c0a4fe029">global::scene</a>.back()-&gt;iesire();</div><div class="line">}</div></div><!-- fragment --> 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00416">416</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00418">418</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l01213">Joc::iesire()</a>, <a class="el" href="main_8cpp_source.html#l01418">MeniuFinal::itereaza()</a> şi <a class="el" href="main_8cpp_source.html#l00744">main()</a>.</p>
+<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l01237">Joc::iesire()</a>, <a class="el" href="main_8cpp_source.html#l01528">MeniuFinal::itereaza()</a> şi <a class="el" href="main_8cpp_source.html#l00768">main()</a>.</p>
 
 </div>
 </div>
@@ -159,9 +159,9 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
       </table>
 </div><div class="memdoc">
 <p>De fiecare data cand jucatorul apasa o tasta aceasta e retinuta in aceasta mapa. Mapa este un fel de vector dar care poate avea altfel de indexare. In cazul acesta ma pot referi la tasta escape asa: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(<a class="code" href="namespaceglobal.html#a6da5c1308adb9fdac1c61389b139dc54">global::taste_apasate</a>[SDL_SCANCODE_ESCAPE]) {</div><div class="line">    <span class="comment">// a apasat escape</span></div><div class="line">}</div></div><!-- fragment --> 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00427">427</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00429">429</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l00792">a_apasat()</a>, <a class="el" href="main_8cpp_source.html#l00744">main()</a>, <a class="el" href="main_8cpp_source.html#l01023">Joc::pauza()</a> şi <a class="el" href="main_8cpp_source.html#l00924">verifica_evenimente()</a>.</p>
+<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l00816">a_apasat()</a>, <a class="el" href="main_8cpp_source.html#l01528">MeniuFinal::itereaza()</a>, <a class="el" href="main_8cpp_source.html#l00768">main()</a>, <a class="el" href="main_8cpp_source.html#l01047">Joc::pauza()</a> şi <a class="el" href="main_8cpp_source.html#l00948">verifica_evenimente()</a>.</p>
 
 </div>
 </div>

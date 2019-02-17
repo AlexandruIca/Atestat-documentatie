@@ -60,6 +60,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Metode Publice</a> &#124;
+<a href="#pri-methods">Metode Private</a> &#124;
 <a href="#pri-attribs">Atribute Private</a> &#124;
 <a href="classMeniuFinal-members.html">Lista tuturor membrilor</a>  </div>
   <div class="headertitle">
@@ -100,6 +101,12 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:a9ee1a22d9df62f0828961d38e05f8aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa functia la fiecare 'desenare'.  <a href="#a9ee1a22d9df62f0828961d38e05f8aa4">Mai mult...</a><br /></td></tr>
 <tr class="separator:a9ee1a22d9df62f0828961d38e05f8aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Metode Private</h2></td></tr>
+<tr class="memitem:a663058fca13b16c502d22ac4ee488cf0"><td class="memItemLeft" align="right" valign="top"><a id="a663058fca13b16c502d22ac4ee488cf0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>citeste_istoric</b> ()</td></tr>
+<tr class="separator:a663058fca13b16c502d22ac4ee488cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atribute Private</h2></td></tr>
 <tr class="memitem:aedde998b4a8c6b468d7dc1a4c5af4cbc"><td class="memItemLeft" align="right" valign="top"><a id="aedde998b4a8c6b468d7dc1a4c5af4cbc"></a>
@@ -111,14 +118,41 @@ TTF_Font *&#160;</td><td class="memItemRight" valign="bottom"><b>m_font</b> = nu
 <tr class="memitem:a79c050764da86c93f5554265a7567036"><td class="memItemLeft" align="right" valign="top"><a id="a79c050764da86c93f5554265a7567036"></a>
 SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><b>m_text</b> = nullptr</td></tr>
 <tr class="separator:a79c050764da86c93f5554265a7567036"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a907b4ebca32688dad8e1682aeaeb9857"><td class="memItemLeft" align="right" valign="top"><a id="a907b4ebca32688dad8e1682aeaeb9857"></a>
-long long&#160;</td><td class="memItemRight" valign="bottom"><b>m_timp_asteptat</b> = 0LL</td></tr>
-<tr class="separator:a907b4ebca32688dad8e1682aeaeb9857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0af1b8d2ce9ba4e2013ddb68f5786f"><td class="memItemLeft" align="right" valign="top"><a id="a3d0af1b8d2ce9ba4e2013ddb68f5786f"></a>
+SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><b>m_text_scor_maxim</b> = nullptr</td></tr>
+<tr class="separator:a3d0af1b8d2ce9ba4e2013ddb68f5786f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a995e013192e1bed67332f0d54ae2b482"><td class="memItemLeft" align="right" valign="top">std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeniuFinal.html#a995e013192e1bed67332f0d54ae2b482">m_istoric</a> {}</td></tr>
+<tr class="memdesc:a995e013192e1bed67332f0d54ae2b482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fisierul in care sunt stocate toate scorurile.  <a href="#a995e013192e1bed67332f0d54ae2b482">Mai mult...</a><br /></td></tr>
+<tr class="separator:a995e013192e1bed67332f0d54ae2b482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dd63e1fb07a20c48cec529f794945a8"><td class="memItemLeft" align="right" valign="top"><a id="a9dd63e1fb07a20c48cec529f794945a8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_scor_maxim</b> { 0 }</td></tr>
+<tr class="separator:a9dd63e1fb07a20c48cec529f794945a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45688213631c7266bb329f301523dfb0"><td class="memItemLeft" align="right" valign="top"><a id="a45688213631c7266bb329f301523dfb0"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_numele_scorului_maxim</b> { &quot;&quot; }</td></tr>
+<tr class="separator:a45688213631c7266bb329f301523dfb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa940eaec12a96d8a9037cd698c5c2baa"><td class="memItemLeft" align="right" valign="top"><a id="aa940eaec12a96d8a9037cd698c5c2baa"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_anul_scorului_maxim</b> { &quot;&quot; }</td></tr>
+<tr class="separator:aa940eaec12a96d8a9037cd698c5c2baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17611b8f7fb8442187fced397c26875a"><td class="memItemLeft" align="right" valign="top"><a id="a17611b8f7fb8442187fced397c26875a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_luna_scorului_maxim</b> { &quot;&quot; }</td></tr>
+<tr class="separator:a17611b8f7fb8442187fced397c26875a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fd4cb6ddc4cfd8bb84cfad734137d8c"><td class="memItemLeft" align="right" valign="top"><a id="a3fd4cb6ddc4cfd8bb84cfad734137d8c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_ziua_scorului_maxim</b> { &quot;&quot; }</td></tr>
+<tr class="separator:a3fd4cb6ddc4cfd8bb84cfad734137d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6102d7ba03592db9af4d2ff8a3c0de"><td class="memItemLeft" align="right" valign="top"><a id="a7e6102d7ba03592db9af4d2ff8a3c0de"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_are_scor_maxim</b> { false }</td></tr>
+<tr class="separator:a7e6102d7ba03592db9af4d2ff8a3c0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0bf7286afbfcf28139aed5fd426a1c8"><td class="memItemLeft" align="right" valign="top"><a id="af0bf7286afbfcf28139aed5fd426a1c8"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_nume_curent</b> { &quot;NUME&quot; }</td></tr>
+<tr class="separator:af0bf7286afbfcf28139aed5fd426a1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c703f1f5632ca0acfef05a7030647b5"><td class="memItemLeft" align="right" valign="top"><a id="a9c703f1f5632ca0acfef05a7030647b5"></a>
+SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><b>m_text_nume_curent</b> { nullptr }</td></tr>
+<tr class="separator:a9c703f1f5632ca0acfef05a7030647b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descriere Detaliată</h2>
 <div class="textblock"><p>Meniul care va fi afisat dupa terminarea unui joc. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00666">666</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00668">668</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 </div><h2 class="groupheader">Documentaţia Funcţiilor Membre</h2>
 <a id="a4a1f2a872c6d0cef0e3f0a8e1545f5de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a1f2a872c6d0cef0e3f0a8e1545f5de">&#9670;&nbsp;</a></span>incarca()</h2>
@@ -147,9 +181,9 @@ long long&#160;</td><td class="memItemRight" valign="bottom"><b>m_timp_asteptat<
 
 <p>Implementează <a class="el" href="classScena.html#a6f53a1dcef68084361dc8f9d56bbb8c0">Scena</a>.</p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l01393">1393</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l01436">1436</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00385">global::desenator</a> şi <a class="el" href="main_8cpp_source.html#l00495">StadiulJocului::scor</a>.</p>
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00387">global::desenator</a> şi <a class="el" href="main_8cpp_source.html#l00497">StadiulJocului::scor</a>.</p>
 
 </div>
 </div>
@@ -179,7 +213,7 @@ long long&#160;</td><td class="memItemRight" valign="bottom"><b>m_timp_asteptat<
 
 <p>Implementează <a class="el" href="classScena.html#ac8de771024795dffa0e5feb8dba881ff">Scena</a>.</p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l01415">1415</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l01498">1498</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -212,9 +246,37 @@ long long&#160;</td><td class="memItemRight" valign="bottom"><b>m_timp_asteptat<
 
 <p>Implementează <a class="el" href="classScena.html#a9e5fcc831ed410b5b2422231ede746ee">Scena</a>.</p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l01418">1418</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l01528">1528</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00792">a_apasat()</a>, <a class="el" href="main_8cpp_source.html#l00385">global::desenator</a>, <a class="el" href="main_8cpp_source.html#l00399">global::inaltime</a>, <a class="el" href="main_8cpp_source.html#l00395">global::lungime</a>, <a class="el" href="main_8cpp_source.html#l00416">global::scene</a> şi <a class="el" href="main_8cpp_source.html#l00500">StadiulJocului::timp_trecut</a>.</p>
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00816">a_apasat()</a>, <a class="el" href="main_8cpp_source.html#l00418">global::scene</a> şi <a class="el" href="main_8cpp_source.html#l00429">global::taste_apasate</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentaţia Datelor Membre</h2>
+<a id="a995e013192e1bed67332f0d54ae2b482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a995e013192e1bed67332f0d54ae2b482">&#9670;&nbsp;</a></span>m_istoric</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ifstream MeniuFinal::m_istoric {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fisierul in care sunt stocate toate scorurile. </p>
+<p>Istoricul are forma: Nume Jucator Luna zi An Scor </p>
+
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00684">684</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

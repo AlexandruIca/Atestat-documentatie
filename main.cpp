@@ -85,9 +85,10 @@
 /// @defgroup group_final Final
 ///
 /// Odata ce omida a murit sau ati iesit din joc in timpul unei pauze veti fi 
-/// intampinat de un nou meniu care va afisa scorul obtinut. Nu va fi afisat 
-/// decat 2 secunde. Daca totusi vreti sa il opriti mai repede apasati
-/// tasta ENTER.
+/// intampinat de un nou meniu care va afisa scorul obtinut si scorul maxim de
+/// pana acum si cine il detine. Daca ati depasit scorul maxim vi se va cere
+/// numele pentru a retine noul maxim. Pentru a reveni la meniul principal
+/// apasati enter.
 ///
 
 ///
@@ -268,6 +269,7 @@
 ///
 
 #include <deque>
+#include <fstream>
 #include <iostream>
 #include <map>
 #include <memory>
@@ -666,11 +668,33 @@ public:
 class MeniuFinal : public Scena
 {
     bool m_incarcat_deja = false;
-    
+
     TTF_Font* m_font = nullptr;
     SDL_Texture* m_text = nullptr;
+    SDL_Texture* m_text_scor_maxim = nullptr;
 
-    long long m_timp_asteptat = 0LL;
+    ///
+    /// @brief Fisierul in care sunt stocate toate scorurile.
+    ///
+    /// Istoricul are forma:
+    ///     Nume Jucator
+    ///     Luna zi An
+    ///     Scor
+    ///
+    std::ifstream m_istoric{};
+
+    int m_scor_maxim{ 0 };
+    std::string m_numele_scorului_maxim{ "" };
+    std::string m_anul_scorului_maxim{ "" };
+    std::string m_luna_scorului_maxim{ "" };
+    std::string m_ziua_scorului_maxim{ "" };
+
+    bool m_are_scor_maxim{ false };
+
+    std::string m_nume_curent{ "NUME" };
+    SDL_Texture* m_text_nume_curent{ nullptr };
+
+    void citeste_istoric();
 
 public:
     virtual void iesire(StadiulJocului&) override;
@@ -678,7 +702,7 @@ public:
     virtual bool incarcat_deja() override;
     virtual bool itereaza(StadiulJocului&) override;
 
-    MeniuFinal() noexcept = default;
+    MeniuFinal() = default;
     virtual ~MeniuFinal() noexcept = default;
 };
 
@@ -744,10 +768,10 @@ void verifica_evenimente();
 int main()
 {
     initializeaza();
-    
+
     global::scene.emplace_back(new Joc);
     global::scene.emplace_back(new MeniuStart);
-   
+
     StadiulJocului stadiu;
 
     while(!global::scene.empty()) {
@@ -801,7 +825,7 @@ void deseneaza_textura(SDL_Texture* textura, int x, int y)
     sursa.y = 0;
 
     SDL_QueryTexture(textura, nullptr, nullptr, &sursa.w, &sursa.h);
-    
+
     destinatie.x = x;
     destinatie.y = y;
     destinatie.w = StadiulJocului::lungime_textura;
@@ -1129,7 +1153,7 @@ void Joc::incarca(StadiulJocului& stadiu)
     reseteaza_teren(stadiu);
     stadiu.directia_omizii = TipDirectie::SUS;
     stadiu.pozitii_omida.clear();
-    stadiu.scor = 0;
+    stadiu.scor = 1;
 
     stadiu.pozitii_omida.push_back(
         { StadiulJocului::inaltime_teren / 2 - 1, StadiulJocului::lungime_teren / 2 - 1 }
@@ -1210,15 +1234,11 @@ bool Joc::itereaza(StadiulJocului& stadiu)
     return continua;
 }
 
-void Joc::iesire(StadiulJocului&/* stadiu*/)
+void Joc::iesire(StadiulJocului&)
 {
-    //std::cout << "Scor: " << stadiu.scor << '\n';
-
     Mix_FreeChunk(m_sunet_frunza);
 
     TTF_CloseFont(m_font);
-    auto a = global::desenator;
-    (void)a;
 
     global::scene.emplace_front(new MeniuFinal);
 }
@@ -1384,10 +1404,33 @@ bool MeniuStart::itereaza(StadiulJocului& stadiu)
     return continua;
 }
 
-void MeniuFinal::iesire(StadiulJocului&)
+void MeniuFinal::citeste_istoric()
+{
+    std::getline(m_istoric, m_numele_scorului_maxim);
+    m_istoric >> m_ziua_scorului_maxim;
+    m_istoric >> m_luna_scorului_maxim;
+    m_istoric >> m_anul_scorului_maxim;
+    m_istoric >> m_scor_maxim;
+}
+
+void MeniuFinal::iesire(StadiulJocului& stadiu)
 {
     TTF_CloseFont(m_font);
     SDL_DestroyTexture(m_text);
+    SDL_DestroyTexture(m_text_nume_curent);
+
+    if(m_are_scor_maxim) {
+        std::ofstream g{ "istoric.txt" };
+        g << m_nume_curent << '\n';
+        g << __DATE__ << '\n';
+        g << stadiu.scor << '\n';
+    }
+
+    try {
+        m_istoric.close();
+    }
+    catch(...) {
+    }
 }
 
 void MeniuFinal::incarca(StadiulJocului& stadiu)
@@ -1395,17 +1438,57 @@ void MeniuFinal::incarca(StadiulJocului& stadiu)
     m_font = TTF_OpenFont("./font/hinted-ElaineSans-Medium.ttf", 70);
 
     std::string mesaj = " Scor: ";
-
     mesaj += std::to_string(stadiu.scor);
 
     SDL_Surface* text = TTF_RenderText_Blended_Wrapped(
-            m_font, 
+            m_font,
             mesaj.c_str(),
             { 255, 255, 255, 255 },
             600
     );
 
     m_text = SDL_CreateTextureFromSurface(global::desenator, text);
+    SDL_FreeSurface(text);
+
+    m_istoric.open("istoric.txt");
+    this->citeste_istoric();
+
+    if(stadiu.scor < m_scor_maxim) {
+        std::string scor_maxim = "Scor maxim: ";
+        scor_maxim += std::to_string(m_scor_maxim);
+
+        if(m_numele_scorului_maxim != "Start") {
+            scor_maxim += "(";
+            scor_maxim += m_numele_scorului_maxim;
+            scor_maxim += ")";
+        }
+
+        text = TTF_RenderText_Blended(
+                m_font,
+                scor_maxim.c_str(),
+                { 255, 255, 255, 255 }
+        );
+
+        m_text_scor_maxim = SDL_CreateTextureFromSurface(
+                global::desenator, text
+        );
+    }
+    else if(stadiu.scor >= m_scor_maxim) {
+        m_are_scor_maxim = true;
+        std::ofstream g{ "istoric.txt" };
+
+        std::string scor_maxim = "    Nou maxim!    ";
+
+        text = TTF_RenderText_Blended(
+                m_font,
+                scor_maxim.c_str(),
+                { 255, 255, 255, 255 }
+        );
+
+        m_text_scor_maxim = SDL_CreateTextureFromSurface(
+                global::desenator, text
+        );
+    }
 
     SDL_FreeSurface(text);
 
@@ -1415,13 +1498,38 @@ void MeniuFinal::incarca(StadiulJocului& stadiu)
 bool MeniuFinal::incarcat_deja()
 { return m_incarcat_deja; }
 
-bool MeniuFinal::itereaza(StadiulJocului& stadiu)
+bool e_litera(SDL_Scancode t_tasta)
+{
+    return t_tasta == SDL_SCANCODE_A || t_tasta == SDL_SCANCODE_B
+        || t_tasta == SDL_SCANCODE_B || t_tasta == SDL_SCANCODE_C
+        || t_tasta == SDL_SCANCODE_D || t_tasta == SDL_SCANCODE_E
+        || t_tasta == SDL_SCANCODE_F || t_tasta == SDL_SCANCODE_G
+        || t_tasta == SDL_SCANCODE_H || t_tasta == SDL_SCANCODE_I
+        || t_tasta == SDL_SCANCODE_J || t_tasta == SDL_SCANCODE_K
+        || t_tasta == SDL_SCANCODE_L || t_tasta == SDL_SCANCODE_M
+        || t_tasta == SDL_SCANCODE_N || t_tasta == SDL_SCANCODE_O
+        || t_tasta == SDL_SCANCODE_P || t_tasta == SDL_SCANCODE_Q
+        || t_tasta == SDL_SCANCODE_R || t_tasta == SDL_SCANCODE_S
+        || t_tasta == SDL_SCANCODE_T || t_tasta == SDL_SCANCODE_U
+        || t_tasta == SDL_SCANCODE_V || t_tasta == SDL_SCANCODE_W
+        || t_tasta == SDL_SCANCODE_X || t_tasta == SDL_SCANCODE_Y
+        || t_tasta == SDL_SCANCODE_Z;
+}
+
+bool e_numar(SDL_Scancode t_tasta)
+{
+    return t_tasta == SDL_SCANCODE_1 || t_tasta == SDL_SCANCODE_2
+        || t_tasta == SDL_SCANCODE_3 || t_tasta == SDL_SCANCODE_4
+        || t_tasta == SDL_SCANCODE_5 || t_tasta == SDL_SCANCODE_6
+        || t_tasta == SDL_SCANCODE_7 || t_tasta == SDL_SCANCODE_8
+        || t_tasta == SDL_SCANCODE_9 || t_tasta == SDL_SCANCODE_0;
+}
+
+bool MeniuFinal::itereaza(StadiulJocului&)
 {
     bool continua = true;
 
-    if(a_apasat(SDL_SCANCODE_RETURN)
-            || m_timp_asteptat > 2000LL)
-    {
+    if(a_apasat(SDL_SCANCODE_RETURN)) {
         global::scene.emplace_front(new MeniuStart);
         global::scene.emplace_front(new Joc);
         continua = false;
@@ -1429,16 +1537,77 @@ bool MeniuFinal::itereaza(StadiulJocului& stadiu)
     if(a_apasat(SDL_SCANCODE_ESCAPE)) {
         continua = false;
     }
+    if(a_apasat(SDL_SCANCODE_BACKSPACE) && !m_nume_curent.empty()) {
+        m_nume_curent.pop_back();
+    }
+    if(a_apasat(SDL_SCANCODE_SPACE)) {
+        m_nume_curent += " ";
+    }
+
+    for(auto const& tasta : global::taste_apasate) {
+        if(e_litera(tasta.first) || e_numar(tasta.first)) {
+            m_nume_curent += SDL_GetKeyName(
+                    SDL_GetKeyFromScancode(tasta.first)
+            );
+        }
+    }
 
     SDL_Rect destinatie;
     destinatie.x = global::lungime / 3;
-    destinatie.y = global::inaltime / 2 - global::inaltime / 16;
+    destinatie.y = global::inaltime / 3 - global::inaltime / 16;
     destinatie.w = global::lungime / 3;
     destinatie.h = global::inaltime / 8;
 
-    SDL_RenderCopy(global::desenator, m_text, nullptr, &destinatie);
+    SDL_Rect destinatie_text_scor;
+    destinatie_text_scor.x = global::lungime / 8;
+    destinatie_text_scor.y = global::inaltime / 3 + global::inaltime / 16;
+    destinatie_text_scor.w = global::lungime / 1.3f;
+    destinatie_text_scor.h = global::inaltime / 8;
 
-    m_timp_asteptat += stadiu.timp_trecut;
+    SDL_RenderCopy(global::desenator, m_text, nullptr, &destinatie);
+    SDL_RenderCopy(
+            global::desenator,
+            m_text_scor_maxim,
+            nullptr,
+            &destinatie_text_scor
+    );
+
+    if(m_are_scor_maxim) {
+        SDL_Rect prompt;
+        prompt.x = global::lungime / 4;
+        prompt.y = global::inaltime / 3 + 4 * global::inaltime / 16;
+        prompt.w = global::lungime / 2;
+        prompt.h = global::inaltime / 8;
+
+        SDL_SetRenderDrawColor(global::desenator, 0, 0, 0, 0);
+        SDL_RenderFillRect(global::desenator, &prompt);
+
+        std::size_t const lungime_max = 20;
+        std::size_t i{ 0 };
+
+        std::string nume = "";
+        nume.reserve(lungime_max + 1);
+
+        for(i = 0; i < lungime_max - m_nume_curent.size() / 2; ++i) {
+            nume.push_back(' ');
+        }
+        nume += m_nume_curent;
+        for(i = 0; i < lungime_max - m_nume_curent.size() / 2; ++i) {
+            nume.push_back(' ');
+        }
+
+        SDL_Surface* text = TTF_RenderText_Blended(
+                m_font, nume.c_str(), { 255, 255, 255, 255 }
+        );
+
+        m_text_nume_curent = SDL_CreateTextureFromSurface(
+                global::desenator, text
+        );
+
+        SDL_RenderCopy(global::desenator, m_text_nume_curent, nullptr, &prompt);
+
+        SDL_FreeSurface(text);
+    }
 
     return continua;
 }

@@ -69,6 +69,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;deque&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -84,6 +85,8 @@ $(function() {
 Graful dependenţelor prin incluziune pentru main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#main_8cpp" alt=""/></div>
+<map name="main_8cpp" id="main_8cpp">
+</map>
 </div>
 </div>
 <p><a href="main_8cpp_source.html">Vezi sursele.</a></p>
@@ -169,6 +172,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main
 <tr class="separator:ad85beba6ce14e67569c227c8af4d5186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f4fa91987e3731c64b385dc822f4425"><td class="memItemLeft" align="right" valign="top"><a id="a2f4fa91987e3731c64b385dc822f4425"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>e_litera</b> (SDL_Scancode t_tasta)</td></tr>
+<tr class="separator:a2f4fa91987e3731c64b385dc822f4425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a409b453676d92d35f214bc5bacab83d4"><td class="memItemLeft" align="right" valign="top"><a id="a409b453676d92d35f214bc5bacab83d4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>e_numar</b> (SDL_Scancode t_tasta)</td></tr>
+<tr class="separator:a409b453676d92d35f214bc5bacab83d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variabile</h2></td></tr>
@@ -209,7 +218,7 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 <p>Terenul este o matrice care contine una din urmatoarele posibilitati de mai jos. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00363">363</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00365">365</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -256,11 +265,11 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </dl>
 <dl class="section attention"><dt>Atenţie</dt><dd>Pozitia data nu are aceleasi coordonate ca <a class="el" href="structPunct.html">Punct</a>. x si y se refera la pozitia in fereastra, nu in matrice. Se aplica si la <a class="el" href="main_8cpp.html#a45c775a13d22397f62c6a3b31133e01d">deseneaza_corp</a>, <a class="el" href="main_8cpp.html#ab93314a433d2cc641ea873947bc59df3">deseneaza_textura</a>. </dd></dl>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00813">813</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00837">837</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00795">deseneaza_textura()</a>.</p>
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00819">deseneaza_textura()</a>.</p>
 
-<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l00829">deseneaza_omida()</a>.</p>
+<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l00853">deseneaza_omida()</a>.</p>
 
 </div>
 </div>
@@ -283,9 +292,9 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <p>Deseneaza intreaga omida. </p>
 <p>Parcurge <a class="el" href="classStadiulJocului.html#a64e0608d9c68b22ea83fd5aba209453f">StadiulJocului::pozitii_omida</a> si deseneaza fiecare parte a omizii. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00829">829</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00853">853</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00813">deseneaza_cap()</a>, <a class="el" href="main_8cpp_source.html#l00816">deseneaza_corp()</a>, <a class="el" href="main_8cpp_source.html#l00292">Punct::i</a>, <a class="el" href="main_8cpp_source.html#l00456">StadiulJocului::inaltime_textura</a>, <a class="el" href="main_8cpp_source.html#l00296">Punct::j</a>, <a class="el" href="main_8cpp_source.html#l00452">StadiulJocului::lungime_textura</a> şi <a class="el" href="main_8cpp_source.html#l00475">StadiulJocului::pozitii_omida</a>.</p>
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00837">deseneaza_cap()</a>, <a class="el" href="main_8cpp_source.html#l00840">deseneaza_corp()</a>, <a class="el" href="main_8cpp_source.html#l00294">Punct::i</a>, <a class="el" href="main_8cpp_source.html#l00458">StadiulJocului::inaltime_textura</a>, <a class="el" href="main_8cpp_source.html#l00298">Punct::j</a>, <a class="el" href="main_8cpp_source.html#l00454">StadiulJocului::lungime_textura</a> şi <a class="el" href="main_8cpp_source.html#l00477">StadiulJocului::pozitii_omida</a>.</p>
 
 </div>
 </div>
@@ -306,11 +315,11 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 <p>Returneaza un punct la nimereala cu conditia ca in acea pozitie in matricesa nu fie nimic. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00868">868</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00892">892</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00292">Punct::i</a>, <a class="el" href="main_8cpp_source.html#l00443">StadiulJocului::inaltime_teren</a>, <a class="el" href="main_8cpp_source.html#l00296">Punct::j</a>, <a class="el" href="main_8cpp_source.html#l00439">StadiulJocului::lungime_teren</a> şi <a class="el" href="main_8cpp_source.html#l00465">StadiulJocului::teren</a>.</p>
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00294">Punct::i</a>, <a class="el" href="main_8cpp_source.html#l00445">StadiulJocului::inaltime_teren</a>, <a class="el" href="main_8cpp_source.html#l00298">Punct::j</a>, <a class="el" href="main_8cpp_source.html#l00441">StadiulJocului::lungime_teren</a> şi <a class="el" href="main_8cpp_source.html#l00467">StadiulJocului::teren</a>.</p>
 
-<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l01176">Joc::itereaza()</a>.</p>
+<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l01200">Joc::itereaza()</a>.</p>
 
 </div>
 </div>
@@ -330,11 +339,11 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 <p>Creeaza fereastra si desenatorul. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00888">888</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00912">912</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00385">global::desenator</a>, <a class="el" href="main_8cpp_source.html#l00380">global::fereastra</a>, <a class="el" href="main_8cpp_source.html#l00399">global::inaltime</a> şi <a class="el" href="main_8cpp_source.html#l00395">global::lungime</a>.</p>
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00387">global::desenator</a>, <a class="el" href="main_8cpp_source.html#l00382">global::fereastra</a>, <a class="el" href="main_8cpp_source.html#l00401">global::inaltime</a> şi <a class="el" href="main_8cpp_source.html#l00397">global::lungime</a>.</p>
 
-<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l00744">main()</a>.</p>
+<p class="reference">Semnalat de <a class="el" href="main_8cpp_source.html#l00768">main()</a>.</p>
 
 </div>
 </div>
@@ -354,9 +363,9 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 <p>Toata magia se intampla aici. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00744">744</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00768">768</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00385">global::desenator</a>, <a class="el" href="main_8cpp_source.html#l00390">global::fereastra_inchisa</a>, <a class="el" href="main_8cpp_source.html#l00888">initializeaza()</a>, <a class="el" href="main_8cpp_source.html#l00416">global::scene</a>, <a class="el" href="main_8cpp_source.html#l00427">global::taste_apasate</a>, <a class="el" href="main_8cpp_source.html#l00500">StadiulJocului::timp_trecut</a> şi <a class="el" href="main_8cpp_source.html#l00924">verifica_evenimente()</a>.</p>
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00387">global::desenator</a>, <a class="el" href="main_8cpp_source.html#l00392">global::fereastra_inchisa</a>, <a class="el" href="main_8cpp_source.html#l00912">initializeaza()</a>, <a class="el" href="main_8cpp_source.html#l00418">global::scene</a>, <a class="el" href="main_8cpp_source.html#l00429">global::taste_apasate</a>, <a class="el" href="main_8cpp_source.html#l00502">StadiulJocului::timp_trecut</a> şi <a class="el" href="main_8cpp_source.html#l00948">verifica_evenimente()</a>.</p>
 
 </div>
 </div>
@@ -377,9 +386,9 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 <p>Pune in matricea jocului pe pozitia <a class="el" href="classStadiulJocului.html#a141067404f3678036ee7a91a02532a30">StadiulJocului::pozitie_frunza</a> PosibilitateTeren::FRUNZA. </p>
 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00918">918</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00942">942</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00292">Punct::i</a>, <a class="el" href="main_8cpp_source.html#l00296">Punct::j</a>, <a class="el" href="main_8cpp_source.html#l00479">StadiulJocului::pozitie_frunza</a> şi <a class="el" href="main_8cpp_source.html#l00465">StadiulJocului::teren</a>.</p>
+<p class="reference">Referinţe <a class="el" href="main_8cpp_source.html#l00294">Punct::i</a>, <a class="el" href="main_8cpp_source.html#l00298">Punct::j</a>, <a class="el" href="main_8cpp_source.html#l00481">StadiulJocului::pozitie_frunza</a> şi <a class="el" href="main_8cpp_source.html#l00467">StadiulJocului::teren</a>.</p>
 
 </div>
 </div>
@@ -396,7 +405,7 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
       </table>
 </div><div class="memdoc">
 <b>Valoarea iniţială:</b><div class="fragment"><div class="line">= {</div><div class="line">    { -1,  0 }, </div><div class="line">    {  1,  0 }, </div><div class="line">    {  0, -1 }, </div><div class="line">    {  0,  1 }  </div><div class="line">}</div></div><!-- fragment --><p>Pentru a face mutarea omizii mai usoara pozitiile capului si cozii vor fi actualizate cu pozitiile lor curente + directie[STANGA] sau DREAPTA etc. </p><div class="fragment"><div class="line"><a class="code" href="structPunct.html">Punct</a> cap{ 2, 3 };</div><div class="line"><span class="comment">// Pentru a muta la stanga:</span></div><div class="line">cap.<a class="code" href="structPunct.html#a28bb6f2facdfadbf7e19d651c526a646">i</a> += <a class="code" href="main_8cpp.html#a68e903f0d20f0a68b3c01b73eb34e9ed">directie</a>[STANGA].<a class="code" href="structPunct.html#a28bb6f2facdfadbf7e19d651c526a646">i</a>;</div><div class="line">cap.j += <a class="code" href="main_8cpp.html#a68e903f0d20f0a68b3c01b73eb34e9ed">directie</a>[STANGA].<a class="code" href="structPunct.html#a065a30931a1d15d6f6c638c4888d254e">j</a>;</div></div><!-- fragment --> 
-<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00353">353</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definiţia în linia <a class="el" href="main_8cpp_source.html#l00355">355</a> a fişierului <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
