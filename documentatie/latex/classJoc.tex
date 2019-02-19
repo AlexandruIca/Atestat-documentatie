@@ -1,0 +1,230 @@
+\hypertarget{classJoc}{}\section{Referinţă la clasa Joc}
+\label{classJoc}\index{Joc@{Joc}}
+
+
+\hyperlink{classScena}{Scena} jocului in sine.  
+
+
+
+
+Diagrama de relaţii pentru Joc
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classJoc__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de relaţii pentru Joc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classJoc__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metode Publice}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJoc_ad0030f6756f45c5ac98a61d8094bf60e}\label{classJoc_ad0030f6756f45c5ac98a61d8094bf60e}} 
+virtual void \hyperlink{classJoc_ad0030f6756f45c5ac98a61d8094bf60e}{iesire} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&) override
+\begin{DoxyCompactList}\small\item\em Paraseste scena. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classJoc_a54976207efdeeb45b42fd639215b65e3}{incarca} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&) override
+\item 
+virtual bool \hyperlink{classJoc_ac78ae0ddb45250af612eb68de253861e}{incarcat\+\_\+deja} () override
+\item 
+virtual bool \hyperlink{classJoc_a5b8d52f928137512921eee184ca04fec}{itereaza} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&) override
+\begin{DoxyCompactList}\small\item\em Executa functia la fiecare \textquotesingle{}desenare\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metode Private}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classJoc_afd69d2cd19f6d2ac2b1a42a4685349e6}{muta\+\_\+omida} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\item 
+bool \hyperlink{classJoc_a0f90008558e8cbed6537b542f79ae55b}{pauza} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\item 
+\mbox{\Hypertarget{classJoc_a8e709a64cfcd3277975fb58f1bff3cd1}\label{classJoc_a8e709a64cfcd3277975fb58f1bff3cd1}} 
+void \hyperlink{classJoc_a8e709a64cfcd3277975fb58f1bff3cd1}{pune\+\_\+scor} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\begin{DoxyCompactList}\small\item\em Printeaza scorul curent pe capul omidei. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJoc_a548406580ddf763a17061190fba3756e}\label{classJoc_a548406580ddf763a17061190fba3756e}} 
+void \hyperlink{classJoc_a548406580ddf763a17061190fba3756e}{reseteaza\+\_\+teren} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\begin{DoxyCompactList}\small\item\em Marcheaza totul Posibilitate\+Teren\+::\+G\+OL. \end{DoxyCompactList}\item 
+bool \hyperlink{classJoc_afe57540f76b33492c721c14726a89d86}{verifica\+\_\+taste\+\_\+apasate} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\begin{DoxyCompactList}\small\item\em Schimba Stadiul\+Jocului\+::noua\+\_\+directie\+\_\+a\+\_\+omizii in functie de tastele apasate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atribute Private}
+\begin{DoxyCompactItemize}
+\item 
+long long \hyperlink{classJoc_a24e667d511404dd6479a86575f0969c2}{m\+\_\+timp\+\_\+asteptat} = 0\+LL
+\item 
+\hyperlink{main_8cpp_aea66a0d525bf9bfb9b61e9cc1ba0b752}{Tip\+Directie} \hyperlink{classJoc_af8df04a66ec45e3373dc6961b8f4a7cc}{noua\+\_\+directie\+\_\+a\+\_\+omizii} = Tip\+Directie\+::\+S\+US
+\item 
+\mbox{\Hypertarget{classJoc_a2b74a53ec4b88eb35c25da37c4cd4bb5}\label{classJoc_a2b74a53ec4b88eb35c25da37c4cd4bb5}} 
+bool {\bfseries m\+\_\+incarcat\+\_\+deja} = false
+\item 
+\mbox{\Hypertarget{classJoc_afda2880b237b18b8bdd4f25c5817adb4}\label{classJoc_afda2880b237b18b8bdd4f25c5817adb4}} 
+T\+T\+F\+\_\+\+Font $\ast$ \hyperlink{classJoc_afda2880b237b18b8bdd4f25c5817adb4}{m\+\_\+font} = nullptr
+\begin{DoxyCompactList}\small\item\em Fontul folosit pentru a desena text pe ecran. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJoc_ac92412a0e2de93936c4c600a7efe45f4}\label{classJoc_ac92412a0e2de93936c4c600a7efe45f4}} 
+Mix\+\_\+\+Chunk $\ast$ \hyperlink{classJoc_ac92412a0e2de93936c4c600a7efe45f4}{m\+\_\+sunet\+\_\+frunza} = nullptr
+\begin{DoxyCompactList}\small\item\em Sunetul redat de fiecare data cand omida mananca o frunza. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJoc_aec45d2779304b9ee3ba5c3962a66323b}\label{classJoc_aec45d2779304b9ee3ba5c3962a66323b}} 
+Mix\+\_\+\+Chunk $\ast$ \hyperlink{classJoc_aec45d2779304b9ee3ba5c3962a66323b}{m\+\_\+sunet\+\_\+powerup} = nullptr
+\begin{DoxyCompactList}\small\item\em Sunetul redat de fiecare data cand omida mananca un powerup. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJoc_a5b93484b69d553174400635eb36e3042}\label{classJoc_a5b93484b69d553174400635eb36e3042}} 
+long long {\bfseries m\+\_\+timp\+\_\+powerup} = 0\+LL
+\end{DoxyCompactItemize}
+
+
+\subsection{Descriere Detaliată}
+\hyperlink{classScena}{Scena} jocului in sine. 
+
+Definiţia în linia 558 a fişierului main.\+cpp.
+
+
+
+\subsection{Documentaţia Funcţiilor Membre}
+\mbox{\Hypertarget{classJoc_a54976207efdeeb45b42fd639215b65e3}\label{classJoc_a54976207efdeeb45b42fd639215b65e3}} 
+\index{Joc@{Joc}!incarca@{incarca}}
+\index{incarca@{incarca}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{incarca()}{incarca()}}
+{\footnotesize\ttfamily void Joc\+::incarca (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Initializeza scena. 
+
+Implementează \hyperlink{classScena_a6f53a1dcef68084361dc8f9d56bbb8c0}{Scena}.
+
+
+
+Definiţia în linia 1128 a fişierului main.\+cpp.
+
+
+
+Referinţe global\+::desenator şi Stadiul\+Jocului\+::directia\+\_\+omizii.
+
+\mbox{\Hypertarget{classJoc_ac78ae0ddb45250af612eb68de253861e}\label{classJoc_ac78ae0ddb45250af612eb68de253861e}} 
+\index{Joc@{Joc}!incarcat\+\_\+deja@{incarcat\+\_\+deja}}
+\index{incarcat\+\_\+deja@{incarcat\+\_\+deja}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{incarcat\+\_\+deja()}{incarcat\_deja()}}
+{\footnotesize\ttfamily bool Joc\+::incarcat\+\_\+deja (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Verifica daca scena curenta a fost incarcata deja. 
+
+Implementează \hyperlink{classScena_ac8de771024795dffa0e5feb8dba881ff}{Scena}.
+
+
+
+Definiţia în linia 1197 a fişierului main.\+cpp.
+
+\mbox{\Hypertarget{classJoc_a5b8d52f928137512921eee184ca04fec}\label{classJoc_a5b8d52f928137512921eee184ca04fec}} 
+\index{Joc@{Joc}!itereaza@{itereaza}}
+\index{itereaza@{itereaza}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{itereaza()}{itereaza()}}
+{\footnotesize\ttfamily bool Joc\+::itereaza (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executa functia la fiecare \textquotesingle{}desenare\textquotesingle{}. 
+
+\begin{DoxyReturn}{Întoarce}
+Adevarat daca iterarea va continua, fals altfel. 
+\end{DoxyReturn}
+
+
+Implementează \hyperlink{classScena_a9e5fcc831ed410b5b2422231ede746ee}{Scena}.
+
+
+
+Definiţia în linia 1200 a fişierului main.\+cpp.
+
+
+
+Referinţe Stadiul\+Jocului\+::directia\+\_\+omizii, Stadiul\+Jocului\+::exista\+\_\+powerup, genereaza\+\_\+pozitie\+\_\+noua(), Punct\+::i, Punct\+::j, Stadiul\+Jocului\+::pozitie\+\_\+powerup, Stadiul\+Jocului\+::teren, Stadiul\+Jocului\+::timp\+\_\+asteptare\+\_\+maxim şi Stadiul\+Jocului\+::timp\+\_\+trecut.
+
+\mbox{\Hypertarget{classJoc_afd69d2cd19f6d2ac2b1a42a4685349e6}\label{classJoc_afd69d2cd19f6d2ac2b1a42a4685349e6}} 
+\index{Joc@{Joc}!muta\+\_\+omida@{muta\+\_\+omida}}
+\index{muta\+\_\+omida@{muta\+\_\+omida}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{muta\+\_\+omida()}{muta\_omida()}}
+{\footnotesize\ttfamily bool Joc\+::muta\+\_\+omida (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{stadiu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Muta omida in directia setata de jucator.
+
+\begin{DoxyReturn}{Întoarce}
+Adevarat daca omida nu a murit, fals altfel. 
+\end{DoxyReturn}
+
+
+Definiţia în linia 992 a fişierului main.\+cpp.
+
+
+
+Referinţe Stadiul\+Jocului\+::directia\+\_\+omizii, Punct\+::i, Stadiul\+Jocului\+::inaltime\+\_\+teren, Punct\+::j, Stadiul\+Jocului\+::lungime\+\_\+teren, Stadiul\+Jocului\+::pozitii\+\_\+omida şi Stadiul\+Jocului\+::teren.
+
+\mbox{\Hypertarget{classJoc_a0f90008558e8cbed6537b542f79ae55b}\label{classJoc_a0f90008558e8cbed6537b542f79ae55b}} 
+\index{Joc@{Joc}!pauza@{pauza}}
+\index{pauza@{pauza}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{pauza()}{pauza()}}
+{\footnotesize\ttfamily bool Joc\+::pauza (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Ruleaza cat timp jocul e in pauza.
+
+\begin{DoxyReturn}{Întoarce}
+Fals daca jucatorul a iesit din joc in timpul pauzei sau adevarat altfel. 
+\end{DoxyReturn}
+
+
+Definiţia în linia 1047 a fişierului main.\+cpp.
+
+
+
+Referinţe a\+\_\+apasat(), global\+::taste\+\_\+apasate şi verifica\+\_\+evenimente().
+
+\mbox{\Hypertarget{classJoc_afe57540f76b33492c721c14726a89d86}\label{classJoc_afe57540f76b33492c721c14726a89d86}} 
+\index{Joc@{Joc}!verifica\+\_\+taste\+\_\+apasate@{verifica\+\_\+taste\+\_\+apasate}}
+\index{verifica\+\_\+taste\+\_\+apasate@{verifica\+\_\+taste\+\_\+apasate}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{verifica\+\_\+taste\+\_\+apasate()}{verifica\_taste\_apasate()}}
+{\footnotesize\ttfamily bool Joc\+::verifica\+\_\+taste\+\_\+apasate (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{stadiu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Schimba Stadiul\+Jocului\+::noua\+\_\+directie\+\_\+a\+\_\+omizii in functie de tastele apasate. 
+
+\begin{DoxyReturn}{Întoarce}
+Fals daca jocul nu mai trebuie sa continue. 
+\end{DoxyReturn}
+
+
+Definiţia în linia 1097 a fişierului main.\+cpp.
+
+
+
+Referinţe a\+\_\+apasat() şi Stadiul\+Jocului\+::directia\+\_\+omizii.
+
+
+
+\subsection{Documentaţia Datelor Membre}
+\mbox{\Hypertarget{classJoc_a24e667d511404dd6479a86575f0969c2}\label{classJoc_a24e667d511404dd6479a86575f0969c2}} 
+\index{Joc@{Joc}!m\+\_\+timp\+\_\+asteptat@{m\+\_\+timp\+\_\+asteptat}}
+\index{m\+\_\+timp\+\_\+asteptat@{m\+\_\+timp\+\_\+asteptat}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{m\+\_\+timp\+\_\+asteptat}{m\_timp\_asteptat}}
+{\footnotesize\ttfamily long long Joc\+::m\+\_\+timp\+\_\+asteptat = 0\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+Cand depaseste \hyperlink{classStadiulJocului_a4cdf9582b472e74980e1eee73ca94769}{Stadiul\+Jocului\+::timp\+\_\+asteptare\+\_\+maxim} omida trebuie mutata. 
+
+Definiţia în linia 563 a fişierului main.\+cpp.
+
+\mbox{\Hypertarget{classJoc_af8df04a66ec45e3373dc6961b8f4a7cc}\label{classJoc_af8df04a66ec45e3373dc6961b8f4a7cc}} 
+\index{Joc@{Joc}!noua\+\_\+directie\+\_\+a\+\_\+omizii@{noua\+\_\+directie\+\_\+a\+\_\+omizii}}
+\index{noua\+\_\+directie\+\_\+a\+\_\+omizii@{noua\+\_\+directie\+\_\+a\+\_\+omizii}!Joc@{Joc}}
+\subsubsection{\texorpdfstring{noua\+\_\+directie\+\_\+a\+\_\+omizii}{noua\_directie\_a\_omizii}}
+{\footnotesize\ttfamily \hyperlink{main_8cpp_aea66a0d525bf9bfb9b61e9cc1ba0b752}{Tip\+Directie} Joc\+::noua\+\_\+directie\+\_\+a\+\_\+omizii = Tip\+Directie\+::\+S\+US\hspace{0.3cm}{\ttfamily [private]}}
+
+Pana cand omida trebuie mutata actualizeaza directia. De exemplu, jucatorul apasa tasta UP, dar dupa apasa D\+O\+WN fara ca \hyperlink{classJoc_a24e667d511404dd6479a86575f0969c2}{Joc\+::m\+\_\+timp\+\_\+asteptat} sa fi depasit \hyperlink{classStadiulJocului_a4cdf9582b472e74980e1eee73ca94769}{Stadiul\+Jocului\+::timp\+\_\+asteptare\+\_\+maxim}. Cand omida trebuie mutata actualizeaza \hyperlink{classStadiulJocului_a79d2c301f57a7fc525534994ffd7057e}{Stadiul\+Jocului\+::directia\+\_\+omizii} cu directia noua. 
+
+Definiţia în linia 571 a fişierului main.\+cpp.
+
+
+
+Documentaţia pentru această clasă a fost generată din fişierul\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8cpp}{main.\+cpp}\end{DoxyCompactItemize}

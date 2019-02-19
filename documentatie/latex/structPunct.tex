@@ -1,0 +1,84 @@
+\hypertarget{structPunct}{}\section{Referinţă la structura Punct}
+\label{structPunct}\index{Punct@{Punct}}
+\subsection*{Metode Publice}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structPunct_a04070b9c9925f7f4a117ecec3d3338af}{Punct} ()=default
+\item 
+\hyperlink{structPunct_a2ff34bc87cb16eae3d747ff63d51bff0}{Punct} (int t\+\_\+i, int t\+\_\+j)
+\item 
+\hyperlink{structPunct_afa529a8fdfbc33103f357f754ba4105e}{Punct} (const \hyperlink{structPunct}{Punct} \&)=default
+\end{DoxyCompactItemize}
+\subsection*{Atribute Publice}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structPunct_a28bb6f2facdfadbf7e19d651c526a646}\label{structPunct_a28bb6f2facdfadbf7e19d651c526a646}} 
+int \hyperlink{structPunct_a28bb6f2facdfadbf7e19d651c526a646}{i} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Linia in matrice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPunct_a065a30931a1d15d6f6c638c4888d254e}\label{structPunct_a065a30931a1d15d6f6c638c4888d254e}} 
+int \hyperlink{structPunct_a065a30931a1d15d6f6c638c4888d254e}{j} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Coloana in matrice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descriere Detaliată}
+O structura ajutatoare pentru a reprezenta o pozitie in matricea jocului. 
+
+Definiţia în linia 289 a fişierului main.\+cpp.
+
+
+
+\subsection{Documentaţia pentru Constructori şi Destructori}
+\mbox{\Hypertarget{structPunct_a04070b9c9925f7f4a117ecec3d3338af}\label{structPunct_a04070b9c9925f7f4a117ecec3d3338af}} 
+\index{Punct@{Punct}!Punct@{Punct}}
+\index{Punct@{Punct}!Punct@{Punct}}
+\subsubsection{\texorpdfstring{Punct()}{Punct()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Punct\+::\+Punct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Vrem ca o variabila de tipul \hyperlink{structPunct}{Punct} sa aiba valorile initiale i = 0 si j = 0 asa ca nu ar trebui modificat nimic in constructor.
+
+Exemplu\+: 
+\begin{DoxyCode}
+\hyperlink{structPunct}{Punct} a;
+a.\hyperlink{structPunct_a28bb6f2facdfadbf7e19d651c526a646}{i} == 0; \textcolor{comment}{// adevarat}
+a.\hyperlink{structPunct_a065a30931a1d15d6f6c638c4888d254e}{j} == 0; \textcolor{comment}{// adevarat}
+\end{DoxyCode}
+ 
+
+Semnalat de Punct().
+
+\mbox{\Hypertarget{structPunct_a2ff34bc87cb16eae3d747ff63d51bff0}\label{structPunct_a2ff34bc87cb16eae3d747ff63d51bff0}} 
+\index{Punct@{Punct}!Punct@{Punct}}
+\index{Punct@{Punct}!Punct@{Punct}}
+\subsubsection{\texorpdfstring{Punct()}{Punct()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Punct\+::\+Punct (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+i,  }\item[{int}]{t\+\_\+j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Putem declara un punct si cu valori customizate pe loc, exemplu\+: 
+\begin{DoxyCode}
+\hyperlink{structPunct}{Punct} a\{ 2, 3 \}; \textcolor{comment}{// a.i va fi 2 si a.j va fi 3}
+\hyperlink{structPunct}{Punct} b(2, 3); \textcolor{comment}{// la fel ca a}
+\end{DoxyCode}
+ 
+
+Definiţia în linia 319 a fişierului main.\+cpp.
+
+
+
+Referinţe j şi Punct().
+
+\mbox{\Hypertarget{structPunct_afa529a8fdfbc33103f357f754ba4105e}\label{structPunct_afa529a8fdfbc33103f357f754ba4105e}} 
+\index{Punct@{Punct}!Punct@{Punct}}
+\index{Punct@{Punct}!Punct@{Punct}}
+\subsubsection{\texorpdfstring{Punct()}{Punct()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Punct\+::\+Punct (\begin{DoxyParamCaption}\item[{const \hyperlink{structPunct}{Punct} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Declarat pentru a putea copia valorile unui punct in alta variabila, exemplu\+: 
+\begin{DoxyCode}
+\hyperlink{structPunct}{Punct} a\{ 2, 3 \};
+\hyperlink{structPunct}{Punct} b\{ 5, 6 \};
+b = a; \textcolor{comment}{// acum b.i = 2 si b.j = 3}
+\end{DoxyCode}
+ 
+
+Documentaţia pentru această structură a fost generată din fişierul\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8cpp}{main.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,81 @@
+\hypertarget{classScena}{}\section{Referinţă la clasa Scena}
+\label{classScena}\index{Scena@{Scena}}
+
+
+Interfata pentru toate scenele.  
+
+
+
+
+Diagrama de relaţii pentru Scena
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classScena__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Metode Publice}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classScena_a6f53a1dcef68084361dc8f9d56bbb8c0}{incarca} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)=0
+\item 
+virtual bool \hyperlink{classScena_ac8de771024795dffa0e5feb8dba881ff}{incarcat\+\_\+deja} ()=0
+\item 
+\mbox{\Hypertarget{classScena_a6c1ec6a3ed0acc18f71e9b8a2c077f7a}\label{classScena_a6c1ec6a3ed0acc18f71e9b8a2c077f7a}} 
+virtual void \hyperlink{classScena_a6c1ec6a3ed0acc18f71e9b8a2c077f7a}{iesire} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)=0
+\begin{DoxyCompactList}\small\item\em Paraseste scena. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classScena_a9e5fcc831ed410b5b2422231ede746ee}{itereaza} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)=0
+\begin{DoxyCompactList}\small\item\em Executa functia la fiecare \textquotesingle{}desenare\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descriere Detaliată}
+Interfata pentru toate scenele. 
+
+Definiţia în linia 530 a fişierului main.\+cpp.
+
+
+
+\subsection{Documentaţia Funcţiilor Membre}
+\mbox{\Hypertarget{classScena_a6f53a1dcef68084361dc8f9d56bbb8c0}\label{classScena_a6f53a1dcef68084361dc8f9d56bbb8c0}} 
+\index{Scena@{Scena}!incarca@{incarca}}
+\index{incarca@{incarca}!Scena@{Scena}}
+\subsubsection{\texorpdfstring{incarca()}{incarca()}}
+{\footnotesize\ttfamily virtual void Scena\+::incarca (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Initializeza scena. 
+
+Implementat în \hyperlink{classMeniuFinal_a4a1f2a872c6d0cef0e3f0a8e1545f5de}{Meniu\+Final}, \hyperlink{classMeniuStart_afb59dcb21968a6ccd685a6c9c0d6a0c1}{Meniu\+Start} şi \hyperlink{classJoc_a54976207efdeeb45b42fd639215b65e3}{Joc}.
+
+\mbox{\Hypertarget{classScena_ac8de771024795dffa0e5feb8dba881ff}\label{classScena_ac8de771024795dffa0e5feb8dba881ff}} 
+\index{Scena@{Scena}!incarcat\+\_\+deja@{incarcat\+\_\+deja}}
+\index{incarcat\+\_\+deja@{incarcat\+\_\+deja}!Scena@{Scena}}
+\subsubsection{\texorpdfstring{incarcat\+\_\+deja()}{incarcat\_deja()}}
+{\footnotesize\ttfamily virtual bool Scena\+::incarcat\+\_\+deja (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Verifica daca scena curenta a fost incarcata deja. 
+
+Implementat în \hyperlink{classMeniuFinal_a72edd47d4783b321124d7d7af74b9ef8}{Meniu\+Final}, \hyperlink{classMeniuStart_a76d8d1b449800060994971ea9df75fd3}{Meniu\+Start} şi \hyperlink{classJoc_ac78ae0ddb45250af612eb68de253861e}{Joc}.
+
+\mbox{\Hypertarget{classScena_a9e5fcc831ed410b5b2422231ede746ee}\label{classScena_a9e5fcc831ed410b5b2422231ede746ee}} 
+\index{Scena@{Scena}!itereaza@{itereaza}}
+\index{itereaza@{itereaza}!Scena@{Scena}}
+\subsubsection{\texorpdfstring{itereaza()}{itereaza()}}
+{\footnotesize\ttfamily virtual bool Scena\+::itereaza (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Executa functia la fiecare \textquotesingle{}desenare\textquotesingle{}. 
+
+\begin{DoxyReturn}{Întoarce}
+Adevarat daca iterarea va continua, fals altfel. 
+\end{DoxyReturn}
+
+
+Implementat în \hyperlink{classMeniuFinal_a9ee1a22d9df62f0828961d38e05f8aa4}{Meniu\+Final}, \hyperlink{classMeniuStart_a35a84c537eca90b76697d1bef88216e5}{Meniu\+Start} şi \hyperlink{classJoc_a5b8d52f928137512921eee184ca04fec}{Joc}.
+
+
+
+Documentaţia pentru această clasă a fost generată din fişierul\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8cpp}{main.\+cpp}\end{DoxyCompactItemize}

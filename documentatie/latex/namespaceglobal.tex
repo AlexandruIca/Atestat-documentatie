@@ -1,0 +1,100 @@
+\hypertarget{namespaceglobal}{}\section{Referinţă la Namespace-\/ul global}
+\label{namespaceglobal}\index{global@{global}}
+\subsection*{Variabile}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceglobal_a07963dc89966c80411e6a3c896c07c10}\label{namespaceglobal_a07963dc89966c80411e6a3c896c07c10}} 
+S\+D\+L\+\_\+\+Window $\ast$ \hyperlink{namespaceglobal_a07963dc89966c80411e6a3c896c07c10}{fereastra} \{ nullptr \}
+\begin{DoxyCompactList}\small\item\em Fereastra in care vom desena tot. \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \hyperlink{namespaceglobal_ae80ab1c7d78e562614d35c3b78e44ea3}{desenator} \{ nullptr \}
+\item 
+bool \hyperlink{namespaceglobal_a930b1255fa49cd41dc635136822d56ee}{fereastra\+\_\+inchisa} = false
+\item 
+\mbox{\Hypertarget{namespaceglobal_a5ad71f80dc82eb6fd1036c8055a5dfbc}\label{namespaceglobal_a5ad71f80dc82eb6fd1036c8055a5dfbc}} 
+constexpr int \hyperlink{namespaceglobal_a5ad71f80dc82eb6fd1036c8055a5dfbc}{lungime} = 600
+\begin{DoxyCompactList}\small\item\em Lungimea ferestrei. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceglobal_a612e7b296f148c02400618f1770f57f7}\label{namespaceglobal_a612e7b296f148c02400618f1770f57f7}} 
+constexpr int \hyperlink{namespaceglobal_a612e7b296f148c02400618f1770f57f7}{inaltime} = 600
+\begin{DoxyCompactList}\small\item\em Inaltimea ferestrei. \end{DoxyCompactList}\item 
+std\+::deque$<$ std\+::unique\+\_\+ptr$<$ \hyperlink{classScena}{Scena} $>$ $>$ \hyperlink{namespaceglobal_af4564594d950b73d4bb81b8c0a4fe029}{scene}
+\item 
+std\+::map$<$ S\+D\+L\+\_\+\+Scancode, bool $>$ \hyperlink{namespaceglobal_a6da5c1308adb9fdac1c61389b139dc54}{taste\+\_\+apasate}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descriere Detaliată}
+Contine variabile de care putem avea nevoie oricand, indiferent de stadiul jocului. 
+
+\subsection{Documentaţia variabilelor}
+\mbox{\Hypertarget{namespaceglobal_ae80ab1c7d78e562614d35c3b78e44ea3}\label{namespaceglobal_ae80ab1c7d78e562614d35c3b78e44ea3}} 
+\index{global@{global}!desenator@{desenator}}
+\index{desenator@{desenator}!global@{global}}
+\subsubsection{\texorpdfstring{desenator}{desenator}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer$\ast$ global\+::desenator \{ nullptr \}}
+
+Nu putem desena direct in fereastra dar S\+DL ne ofera posibilitatea sa creem un \textquotesingle{}desenator\textquotesingle{} care va desena efectiv figuri geometrice/texturi. 
+
+Definiţia în linia 387 a fişierului main.\+cpp.
+
+
+
+Semnalat de deseneaza\+\_\+textura(), Joc\+::incarca(), Meniu\+Start\+::incarca(), Meniu\+Final\+::incarca(), initializeaza(), Meniu\+Start\+::itereaza(), main() şi Joc\+::pune\+\_\+scor().
+
+\mbox{\Hypertarget{namespaceglobal_a930b1255fa49cd41dc635136822d56ee}\label{namespaceglobal_a930b1255fa49cd41dc635136822d56ee}} 
+\index{global@{global}!fereastra\+\_\+inchisa@{fereastra\+\_\+inchisa}}
+\index{fereastra\+\_\+inchisa@{fereastra\+\_\+inchisa}!global@{global}}
+\subsubsection{\texorpdfstring{fereastra\+\_\+inchisa}{fereastra\_inchisa}}
+{\footnotesize\ttfamily bool global\+::fereastra\+\_\+inchisa = false}
+
+Devine adevarat cand jucatorul inchide fereastra de tot. 
+
+Definiţia în linia 392 a fişierului main.\+cpp.
+
+
+
+Semnalat de Joc\+::iesire(), Meniu\+Start\+::itereaza(), main() şi verifica\+\_\+evenimente().
+
+\mbox{\Hypertarget{namespaceglobal_af4564594d950b73d4bb81b8c0a4fe029}\label{namespaceglobal_af4564594d950b73d4bb81b8c0a4fe029}} 
+\index{global@{global}!scene@{scene}}
+\index{scene@{scene}!global@{global}}
+\subsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily std\+::deque$<$std\+::unique\+\_\+ptr$<$\hyperlink{classScena}{Scena}$>$ $>$ global\+::scene}
+
+Toate scenele sunt pastrate in acest vector. Clasa \hyperlink{classScena}{Scena} ofera o interfata comuna pe care orice scena(care e de fapt o alta aplicatie, de exemplu meniul de inceput/pauza) trebuie sa o urmeze. Utilizarea arata cam asa\+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{while}(!\hyperlink{namespaceglobal_a930b1255fa49cd41dc635136822d56ee}{global::fereastra\_inchisa}) \{
+    \hyperlink{namespaceglobal_af4564594d950b73d4bb81b8c0a4fe029}{global::scene}.back()->incarca();
+    
+    \textcolor{keywordflow}{while}(\hyperlink{namespaceglobal_af4564594d950b73d4bb81b8c0a4fe029}{global::scene}.back()->itereaza()) \{\}
+    
+    \hyperlink{namespaceglobal_af4564594d950b73d4bb81b8c0a4fe029}{global::scene}.back()->iesire();
+\}
+\end{DoxyCode}
+ 
+
+Definiţia în linia 418 a fişierului main.\+cpp.
+
+
+
+Semnalat de Joc\+::iesire(), Meniu\+Final\+::itereaza() şi main().
+
+\mbox{\Hypertarget{namespaceglobal_a6da5c1308adb9fdac1c61389b139dc54}\label{namespaceglobal_a6da5c1308adb9fdac1c61389b139dc54}} 
+\index{global@{global}!taste\+\_\+apasate@{taste\+\_\+apasate}}
+\index{taste\+\_\+apasate@{taste\+\_\+apasate}!global@{global}}
+\subsubsection{\texorpdfstring{taste\+\_\+apasate}{taste\_apasate}}
+{\footnotesize\ttfamily std\+::map$<$S\+D\+L\+\_\+\+Scancode, bool$>$ global\+::taste\+\_\+apasate}
+
+De fiecare data cand jucatorul apasa o tasta aceasta e retinuta in aceasta mapa. Mapa este un fel de vector dar care poate avea altfel de indexare. In cazul acesta ma pot referi la tasta escape asa\+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(\hyperlink{namespaceglobal_a6da5c1308adb9fdac1c61389b139dc54}{global::taste\_apasate}[SDL\_SCANCODE\_ESCAPE]) \{
+    \textcolor{comment}{// a apasat escape}
+\}
+\end{DoxyCode}
+ 
+
+Definiţia în linia 429 a fişierului main.\+cpp.
+
+
+
+Semnalat de a\+\_\+apasat(), Meniu\+Final\+::itereaza(), main(), Joc\+::pauza() şi verifica\+\_\+evenimente().
+

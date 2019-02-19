@@ -1,0 +1,175 @@
+\hypertarget{classMeniuFinal}{}\section{Referinţă la clasa Meniu\+Final}
+\label{classMeniuFinal}\index{Meniu\+Final@{Meniu\+Final}}
+
+
+Meniul care va fi afisat dupa terminarea unui joc.  
+
+
+
+
+Diagrama de relaţii pentru Meniu\+Final
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classMeniuFinal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de relaţii pentru Meniu\+Final\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classMeniuFinal__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metode Publice}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a1effd96032aadf141533119115dbbe91}\label{classMeniuFinal_a1effd96032aadf141533119115dbbe91}} 
+virtual void \hyperlink{classMeniuFinal_a1effd96032aadf141533119115dbbe91}{iesire} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&) override
+\begin{DoxyCompactList}\small\item\em Paraseste scena. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMeniuFinal_a4a1f2a872c6d0cef0e3f0a8e1545f5de}{incarca} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&) override
+\item 
+virtual bool \hyperlink{classMeniuFinal_a72edd47d4783b321124d7d7af74b9ef8}{incarcat\+\_\+deja} () override
+\item 
+virtual bool \hyperlink{classMeniuFinal_a9ee1a22d9df62f0828961d38e05f8aa4}{itereaza} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&) override
+\begin{DoxyCompactList}\small\item\em Executa functia la fiecare \textquotesingle{}desenare\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metode Private}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a663058fca13b16c502d22ac4ee488cf0}\label{classMeniuFinal_a663058fca13b16c502d22ac4ee488cf0}} 
+void {\bfseries citeste\+\_\+istoric} ()
+\end{DoxyCompactItemize}
+\subsection*{Atribute Private}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_aedde998b4a8c6b468d7dc1a4c5af4cbc}\label{classMeniuFinal_aedde998b4a8c6b468d7dc1a4c5af4cbc}} 
+bool {\bfseries m\+\_\+incarcat\+\_\+deja} = false
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a8ca418faf68fa155bc809a325479a02a}\label{classMeniuFinal_a8ca418faf68fa155bc809a325479a02a}} 
+T\+T\+F\+\_\+\+Font $\ast$ {\bfseries m\+\_\+font} = nullptr
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a79c050764da86c93f5554265a7567036}\label{classMeniuFinal_a79c050764da86c93f5554265a7567036}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries m\+\_\+text} = nullptr
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a3d0af1b8d2ce9ba4e2013ddb68f5786f}\label{classMeniuFinal_a3d0af1b8d2ce9ba4e2013ddb68f5786f}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries m\+\_\+text\+\_\+scor\+\_\+maxim} = nullptr
+\item 
+std\+::ifstream \hyperlink{classMeniuFinal_a995e013192e1bed67332f0d54ae2b482}{m\+\_\+istoric} \{\}
+\begin{DoxyCompactList}\small\item\em Fisierul in care sunt stocate toate scorurile. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMeniuFinal_a9dd63e1fb07a20c48cec529f794945a8}\label{classMeniuFinal_a9dd63e1fb07a20c48cec529f794945a8}} 
+int {\bfseries m\+\_\+scor\+\_\+maxim} \{ 0 \}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a45688213631c7266bb329f301523dfb0}\label{classMeniuFinal_a45688213631c7266bb329f301523dfb0}} 
+std\+::string {\bfseries m\+\_\+numele\+\_\+scorului\+\_\+maxim} \{ \char`\"{}\char`\"{} \}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_aa940eaec12a96d8a9037cd698c5c2baa}\label{classMeniuFinal_aa940eaec12a96d8a9037cd698c5c2baa}} 
+std\+::string {\bfseries m\+\_\+anul\+\_\+scorului\+\_\+maxim} \{ \char`\"{}\char`\"{} \}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a17611b8f7fb8442187fced397c26875a}\label{classMeniuFinal_a17611b8f7fb8442187fced397c26875a}} 
+std\+::string {\bfseries m\+\_\+luna\+\_\+scorului\+\_\+maxim} \{ \char`\"{}\char`\"{} \}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a3fd4cb6ddc4cfd8bb84cfad734137d8c}\label{classMeniuFinal_a3fd4cb6ddc4cfd8bb84cfad734137d8c}} 
+std\+::string {\bfseries m\+\_\+ziua\+\_\+scorului\+\_\+maxim} \{ \char`\"{}\char`\"{} \}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a7e6102d7ba03592db9af4d2ff8a3c0de}\label{classMeniuFinal_a7e6102d7ba03592db9af4d2ff8a3c0de}} 
+bool {\bfseries m\+\_\+are\+\_\+scor\+\_\+maxim} \{ false \}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_af0bf7286afbfcf28139aed5fd426a1c8}\label{classMeniuFinal_af0bf7286afbfcf28139aed5fd426a1c8}} 
+std\+::string {\bfseries m\+\_\+nume\+\_\+curent} \{ \char`\"{}N\+U\+ME\char`\"{} \}
+\item 
+\mbox{\Hypertarget{classMeniuFinal_a9c703f1f5632ca0acfef05a7030647b5}\label{classMeniuFinal_a9c703f1f5632ca0acfef05a7030647b5}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries m\+\_\+text\+\_\+nume\+\_\+curent} \{ nullptr \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descriere Detaliată}
+Meniul care va fi afisat dupa terminarea unui joc. 
+
+Definiţia în linia 668 a fişierului main.\+cpp.
+
+
+
+\subsection{Documentaţia Funcţiilor Membre}
+\mbox{\Hypertarget{classMeniuFinal_a4a1f2a872c6d0cef0e3f0a8e1545f5de}\label{classMeniuFinal_a4a1f2a872c6d0cef0e3f0a8e1545f5de}} 
+\index{Meniu\+Final@{Meniu\+Final}!incarca@{incarca}}
+\index{incarca@{incarca}!Meniu\+Final@{Meniu\+Final}}
+\subsubsection{\texorpdfstring{incarca()}{incarca()}}
+{\footnotesize\ttfamily void Meniu\+Final\+::incarca (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Initializeza scena. 
+
+Implementează \hyperlink{classScena_a6f53a1dcef68084361dc8f9d56bbb8c0}{Scena}.
+
+
+
+Definiţia în linia 1436 a fişierului main.\+cpp.
+
+
+
+Referinţe global\+::desenator şi Stadiul\+Jocului\+::scor.
+
+\mbox{\Hypertarget{classMeniuFinal_a72edd47d4783b321124d7d7af74b9ef8}\label{classMeniuFinal_a72edd47d4783b321124d7d7af74b9ef8}} 
+\index{Meniu\+Final@{Meniu\+Final}!incarcat\+\_\+deja@{incarcat\+\_\+deja}}
+\index{incarcat\+\_\+deja@{incarcat\+\_\+deja}!Meniu\+Final@{Meniu\+Final}}
+\subsubsection{\texorpdfstring{incarcat\+\_\+deja()}{incarcat\_deja()}}
+{\footnotesize\ttfamily bool Meniu\+Final\+::incarcat\+\_\+deja (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Verifica daca scena curenta a fost incarcata deja. 
+
+Implementează \hyperlink{classScena_ac8de771024795dffa0e5feb8dba881ff}{Scena}.
+
+
+
+Definiţia în linia 1498 a fişierului main.\+cpp.
+
+\mbox{\Hypertarget{classMeniuFinal_a9ee1a22d9df62f0828961d38e05f8aa4}\label{classMeniuFinal_a9ee1a22d9df62f0828961d38e05f8aa4}} 
+\index{Meniu\+Final@{Meniu\+Final}!itereaza@{itereaza}}
+\index{itereaza@{itereaza}!Meniu\+Final@{Meniu\+Final}}
+\subsubsection{\texorpdfstring{itereaza()}{itereaza()}}
+{\footnotesize\ttfamily bool Meniu\+Final\+::itereaza (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executa functia la fiecare \textquotesingle{}desenare\textquotesingle{}. 
+
+\begin{DoxyReturn}{Întoarce}
+Adevarat daca iterarea va continua, fals altfel. 
+\end{DoxyReturn}
+
+
+Implementează \hyperlink{classScena_a9e5fcc831ed410b5b2422231ede746ee}{Scena}.
+
+
+
+Definiţia în linia 1528 a fişierului main.\+cpp.
+
+
+
+Referinţe a\+\_\+apasat(), global\+::scene şi global\+::taste\+\_\+apasate.
+
+
+
+\subsection{Documentaţia Datelor Membre}
+\mbox{\Hypertarget{classMeniuFinal_a995e013192e1bed67332f0d54ae2b482}\label{classMeniuFinal_a995e013192e1bed67332f0d54ae2b482}} 
+\index{Meniu\+Final@{Meniu\+Final}!m\+\_\+istoric@{m\+\_\+istoric}}
+\index{m\+\_\+istoric@{m\+\_\+istoric}!Meniu\+Final@{Meniu\+Final}}
+\subsubsection{\texorpdfstring{m\+\_\+istoric}{m\_istoric}}
+{\footnotesize\ttfamily std\+::ifstream Meniu\+Final\+::m\+\_\+istoric \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fisierul in care sunt stocate toate scorurile. 
+
+Istoricul are forma\+: Nume Jucator Luna zi An Scor 
+
+Definiţia în linia 684 a fişierului main.\+cpp.
+
+
+
+Documentaţia pentru această clasă a fost generată din fişierul\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8cpp}{main.\+cpp}\end{DoxyCompactItemize}

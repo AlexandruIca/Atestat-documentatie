@@ -1,0 +1,194 @@
+\hypertarget{classStadiulJocului}{}\section{Referinţă la clasa Stadiul\+Jocului}
+\label{classStadiulJocului}\index{Stadiul\+Jocului@{Stadiul\+Jocului}}
+
+
+Contine toata informatia de care avem nevoie in timpul jocului.  
+
+
+
+
+Diagrama de relaţii pentru Stadiul\+Jocului\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classStadiulJocului__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Atribute Publice}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8cpp_a67b02df562611307c1e3adeace56d13e}{Posibilitate\+Teren} \hyperlink{classStadiulJocului_a2e71823589e83f16593f8a2870c065e6}{teren} \mbox{[}\hyperlink{classStadiulJocului_a19203356f61f0f11191445347092bd3c}{inaltime\+\_\+teren}\mbox{]}\mbox{[}\hyperlink{classStadiulJocului_ab1b866a96905e3491008c1e7268d9983}{lungime\+\_\+teren}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Matricea jocului. \end{DoxyCompactList}\item 
+std\+::deque$<$ \hyperlink{structPunct}{Punct} $>$ \hyperlink{classStadiulJocului_a64e0608d9c68b22ea83fd5aba209453f}{pozitii\+\_\+omida}
+\begin{DoxyCompactList}\small\item\em Coada care contine pozitiile omizii. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStadiulJocului_a141067404f3678036ee7a91a02532a30}\label{classStadiulJocului_a141067404f3678036ee7a91a02532a30}} 
+\hyperlink{structPunct}{Punct} \hyperlink{classStadiulJocului_a141067404f3678036ee7a91a02532a30}{pozitie\+\_\+frunza}
+\begin{DoxyCompactList}\small\item\em Unde se afla frunza. \end{DoxyCompactList}\item 
+\hyperlink{structPunct}{Punct} \hyperlink{classStadiulJocului_a9e472dcc33fa67d1b5e000576133c3ac}{pozitie\+\_\+powerup}
+\begin{DoxyCompactList}\small\item\em Unde se afla powerup-\/ul. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStadiulJocului_af47424386a19c4f87d45843896a39564}\label{classStadiulJocului_af47424386a19c4f87d45843896a39564}} 
+bool \hyperlink{classStadiulJocului_af47424386a19c4f87d45843896a39564}{exista\+\_\+powerup} = false
+\begin{DoxyCompactList}\small\item\em Adavarat daca am generat deja un powerup. \end{DoxyCompactList}\item 
+int \hyperlink{classStadiulJocului_a1c96d2d1fdcc40bf7c111f549f14ccb5}{scor} = 0
+\begin{DoxyCompactList}\small\item\em Scorul jocului. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStadiulJocului_a338b9e5467ad6d4d355c3978e04d32d6}\label{classStadiulJocului_a338b9e5467ad6d4d355c3978e04d32d6}} 
+long long \hyperlink{classStadiulJocului_a338b9e5467ad6d4d355c3978e04d32d6}{timp\+\_\+trecut} = 0
+\begin{DoxyCompactList}\small\item\em Timpul care a trecut de la ultima \textquotesingle{}desenare\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{main_8cpp_aea66a0d525bf9bfb9b61e9cc1ba0b752}{Tip\+Directie} \hyperlink{classStadiulJocului_a79d2c301f57a7fc525534994ffd7057e}{directia\+\_\+omizii} = Tip\+Directie\+::\+S\+US
+\begin{DoxyCompactList}\small\item\em In ce directie se deplaseaza omida. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStadiulJocului_a80f225be50024541c53fe7f3d508571e}\label{classStadiulJocului_a80f225be50024541c53fe7f3d508571e}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries textura\+\_\+capului} \{ nullptr \}
+\item 
+\mbox{\Hypertarget{classStadiulJocului_a1e7f3685bac572dc18cda0182fd376be}\label{classStadiulJocului_a1e7f3685bac572dc18cda0182fd376be}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries textura\+\_\+corpului} \{ nullptr \}
+\item 
+\mbox{\Hypertarget{classStadiulJocului_a468205051b2d772552dcbd85da88194e}\label{classStadiulJocului_a468205051b2d772552dcbd85da88194e}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries textura\+\_\+frunzei} \{ nullptr \}
+\item 
+\mbox{\Hypertarget{classStadiulJocului_a2c786c42b52f98153c834751143a03f0}\label{classStadiulJocului_a2c786c42b52f98153c834751143a03f0}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries textura\+\_\+powerup} \{ nullptr \}
+\item 
+\mbox{\Hypertarget{classStadiulJocului_ab1c4b5d772a958860c7d880605cff1a9}\label{classStadiulJocului_ab1c4b5d772a958860c7d880605cff1a9}} 
+S\+D\+L\+\_\+\+Color {\bfseries culoare\+\_\+fundal} = \{ 15, 15, 15, 255 \}
+\end{DoxyCompactItemize}
+\subsection*{Atribute Statice Publice}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStadiulJocului_ab1b866a96905e3491008c1e7268d9983}\label{classStadiulJocului_ab1b866a96905e3491008c1e7268d9983}} 
+static constexpr int \hyperlink{classStadiulJocului_ab1b866a96905e3491008c1e7268d9983}{lungime\+\_\+teren} = 20
+\begin{DoxyCompactList}\small\item\em Lungimea matricii jocului. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStadiulJocului_a19203356f61f0f11191445347092bd3c}\label{classStadiulJocului_a19203356f61f0f11191445347092bd3c}} 
+static constexpr int \hyperlink{classStadiulJocului_a19203356f61f0f11191445347092bd3c}{inaltime\+\_\+teren} = 20
+\begin{DoxyCompactList}\small\item\em Inaltimea matricii jocului. \end{DoxyCompactList}\item 
+static constexpr int \hyperlink{classStadiulJocului_ad66a6d4dd8dcbebe7df6098696f205a5}{lungime\+\_\+textura} = \hyperlink{namespaceglobal_a5ad71f80dc82eb6fd1036c8055a5dfbc}{global\+::lungime} / \hyperlink{classStadiulJocului_ab1b866a96905e3491008c1e7268d9983}{lungime\+\_\+teren}
+\begin{DoxyCompactList}\small\item\em Lungimea unei texturi. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStadiulJocului_a59c1dd4044856f47e36291c474f99040}\label{classStadiulJocului_a59c1dd4044856f47e36291c474f99040}} 
+static constexpr int \hyperlink{classStadiulJocului_a59c1dd4044856f47e36291c474f99040}{inaltime\+\_\+textura} = \hyperlink{namespaceglobal_a612e7b296f148c02400618f1770f57f7}{global\+::inaltime} / \hyperlink{classStadiulJocului_a19203356f61f0f11191445347092bd3c}{inaltime\+\_\+teren}
+\begin{DoxyCompactList}\small\item\em Inaltimea unei texturi. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStadiulJocului_a4cdf9582b472e74980e1eee73ca94769}\label{classStadiulJocului_a4cdf9582b472e74980e1eee73ca94769}} 
+static long long \hyperlink{classStadiulJocului_a4cdf9582b472e74980e1eee73ca94769}{timp\+\_\+asteptare\+\_\+maxim} = 150\+LL
+\begin{DoxyCompactList}\small\item\em Timpul maxim pana cand omida se va misca. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descriere Detaliată}
+Contine toata informatia de care avem nevoie in timpul jocului. 
+
+Definiţia în linia 435 a fişierului main.\+cpp.
+
+
+
+\subsection{Documentaţia Datelor Membre}
+\mbox{\Hypertarget{classStadiulJocului_a79d2c301f57a7fc525534994ffd7057e}\label{classStadiulJocului_a79d2c301f57a7fc525534994ffd7057e}} 
+\index{Stadiul\+Jocului@{Stadiul\+Jocului}!directia\+\_\+omizii@{directia\+\_\+omizii}}
+\index{directia\+\_\+omizii@{directia\+\_\+omizii}!Stadiul\+Jocului@{Stadiul\+Jocului}}
+\subsubsection{\texorpdfstring{directia\+\_\+omizii}{directia\_omizii}}
+{\footnotesize\ttfamily \hyperlink{main_8cpp_aea66a0d525bf9bfb9b61e9cc1ba0b752}{Tip\+Directie} Stadiul\+Jocului\+::directia\+\_\+omizii = Tip\+Directie\+::\+S\+US}
+
+
+
+In ce directie se deplaseaza omida. 
+
+Initial se deplaseaza in sus dar se va schimba in functie de ce taste apasa jucatorul. 
+
+Definiţia în linia 515 a fişierului main.\+cpp.
+
+
+
+Semnalat de Joc\+::incarca(), Joc\+::itereaza(), Joc\+::muta\+\_\+omida() şi Joc\+::verifica\+\_\+taste\+\_\+apasate().
+
+\mbox{\Hypertarget{classStadiulJocului_ad66a6d4dd8dcbebe7df6098696f205a5}\label{classStadiulJocului_ad66a6d4dd8dcbebe7df6098696f205a5}} 
+\index{Stadiul\+Jocului@{Stadiul\+Jocului}!lungime\+\_\+textura@{lungime\+\_\+textura}}
+\index{lungime\+\_\+textura@{lungime\+\_\+textura}!Stadiul\+Jocului@{Stadiul\+Jocului}}
+\subsubsection{\texorpdfstring{lungime\+\_\+textura}{lungime\_textura}}
+{\footnotesize\ttfamily constexpr int Stadiul\+Jocului\+::lungime\+\_\+textura = \hyperlink{namespaceglobal_a5ad71f80dc82eb6fd1036c8055a5dfbc}{global\+::lungime} / \hyperlink{classStadiulJocului_ab1b866a96905e3491008c1e7268d9983}{lungime\+\_\+teren}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lungimea unei texturi. 
+
+In functie de dimensiunea matricii jocului lungimea si inaltimea texturilor se schimba. In cazul nostru o textura nu e altceva decat o imagine incarcata si desenata in fereastra. 
+
+Definiţia în linia 454 a fişierului main.\+cpp.
+
+
+
+Semnalat de deseneaza\+\_\+frunza(), deseneaza\+\_\+omida(), deseneaza\+\_\+powerup(), deseneaza\+\_\+textura(), Meniu\+Start\+::itereaza() şi Joc\+::pune\+\_\+scor().
+
+\mbox{\Hypertarget{classStadiulJocului_a9e472dcc33fa67d1b5e000576133c3ac}\label{classStadiulJocului_a9e472dcc33fa67d1b5e000576133c3ac}} 
+\index{Stadiul\+Jocului@{Stadiul\+Jocului}!pozitie\+\_\+powerup@{pozitie\+\_\+powerup}}
+\index{pozitie\+\_\+powerup@{pozitie\+\_\+powerup}!Stadiul\+Jocului@{Stadiul\+Jocului}}
+\subsubsection{\texorpdfstring{pozitie\+\_\+powerup}{pozitie\_powerup}}
+{\footnotesize\ttfamily \hyperlink{structPunct}{Punct} Stadiul\+Jocului\+::pozitie\+\_\+powerup}
+
+
+
+Unde se afla powerup-\/ul. 
+
+Un Powerup este un mar, mancare mult mai consistenta pentru omida. 
+
+Definiţia în linia 487 a fişierului main.\+cpp.
+
+
+
+Semnalat de deseneaza\+\_\+powerup() şi Joc\+::itereaza().
+
+\mbox{\Hypertarget{classStadiulJocului_a64e0608d9c68b22ea83fd5aba209453f}\label{classStadiulJocului_a64e0608d9c68b22ea83fd5aba209453f}} 
+\index{Stadiul\+Jocului@{Stadiul\+Jocului}!pozitii\+\_\+omida@{pozitii\+\_\+omida}}
+\index{pozitii\+\_\+omida@{pozitii\+\_\+omida}!Stadiul\+Jocului@{Stadiul\+Jocului}}
+\subsubsection{\texorpdfstring{pozitii\+\_\+omida}{pozitii\_omida}}
+{\footnotesize\ttfamily std\+::deque$<$\hyperlink{structPunct}{Punct}$>$ Stadiul\+Jocului\+::pozitii\+\_\+omida}
+
+
+
+Coada care contine pozitiile omizii. 
+
+Este o coada in care se poate insera si la inceput si la final. Prin pozitiile omizii se intelege unde se afla cercurile cu care desenez omida. Omida va fi reprezentata cu cercuri, capul este un cerc rosu, restul cercuri albastre. Astfel parcurg coada pentru a determina unde trebuie sa desenez cercurile. pozitii\+\_\+omida.\+front() va fi capul omizii. 
+
+Definiţia în linia 477 a fişierului main.\+cpp.
+
+
+
+Semnalat de deseneaza\+\_\+omida(), Joc\+::muta\+\_\+omida() şi Joc\+::pune\+\_\+scor().
+
+\mbox{\Hypertarget{classStadiulJocului_a1c96d2d1fdcc40bf7c111f549f14ccb5}\label{classStadiulJocului_a1c96d2d1fdcc40bf7c111f549f14ccb5}} 
+\index{Stadiul\+Jocului@{Stadiul\+Jocului}!scor@{scor}}
+\index{scor@{scor}!Stadiul\+Jocului@{Stadiul\+Jocului}}
+\subsubsection{\texorpdfstring{scor}{scor}}
+{\footnotesize\ttfamily int Stadiul\+Jocului\+::scor = 0}
+
+
+
+Scorul jocului. 
+
+Pentru fiecare frunza mancate scorul creste cu 1. 
+
+Definiţia în linia 497 a fişierului main.\+cpp.
+
+
+
+Semnalat de Meniu\+Final\+::iesire(), Meniu\+Final\+::incarca() şi Joc\+::pune\+\_\+scor().
+
+\mbox{\Hypertarget{classStadiulJocului_a2e71823589e83f16593f8a2870c065e6}\label{classStadiulJocului_a2e71823589e83f16593f8a2870c065e6}} 
+\index{Stadiul\+Jocului@{Stadiul\+Jocului}!teren@{teren}}
+\index{teren@{teren}!Stadiul\+Jocului@{Stadiul\+Jocului}}
+\subsubsection{\texorpdfstring{teren}{teren}}
+{\footnotesize\ttfamily \hyperlink{main_8cpp_a67b02df562611307c1e3adeace56d13e}{Posibilitate\+Teren} Stadiul\+Jocului\+::teren\mbox{[}\hyperlink{classStadiulJocului_a19203356f61f0f11191445347092bd3c}{inaltime\+\_\+teren}\mbox{]}\mbox{[}\hyperlink{classStadiulJocului_ab1b866a96905e3491008c1e7268d9983}{lungime\+\_\+teren}\mbox{]}}
+
+
+
+Matricea jocului. 
+
+Matricea reprezinta terenul pe care se deplaseaza omida. Valorile din matrice pot fi una dinre \hyperlink{main_8cpp_a67b02df562611307c1e3adeace56d13e}{Posibilitate\+Teren}. Omida este reprezentata ca o coada care contine \hyperlink{structPunct}{Punct}, o coada in care se poate insera si la inceput si la final\+: pozitii\+\_\+omida. 
+
+Definiţia în linia 467 a fişierului main.\+cpp.
+
+
+
+Semnalat de genereaza\+\_\+pozitie\+\_\+noua(), Joc\+::itereaza(), marcheaza\+\_\+frunza(), Joc\+::muta\+\_\+omida() şi Joc\+::reseteaza\+\_\+teren().
+
+
+
+Documentaţia pentru această clasă a fost generată din fişierul\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8cpp}{main.\+cpp}\end{DoxyCompactItemize}

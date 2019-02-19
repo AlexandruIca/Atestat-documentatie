@@ -1,0 +1,279 @@
+\hypertarget{main_8cpp}{}\section{Referinţă la fişierul main.\+cpp}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}S\+D\+L2/\+S\+D\+L.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+D\+L2/\+S\+D\+L\+\_\+image.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+D\+L2/\+S\+D\+L\+\_\+mixer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+D\+L2/\+S\+D\+L\+\_\+ttf.\+h\char`\"{}}\newline
+Graful dependenţelor prin incluziune pentru main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Membri}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPunct}{Punct}
+\item 
+class \hyperlink{classStadiulJocului}{Stadiul\+Jocului}
+\begin{DoxyCompactList}\small\item\em Contine toata informatia de care avem nevoie in timpul jocului. \end{DoxyCompactList}\item 
+class \hyperlink{classScena}{Scena}
+\begin{DoxyCompactList}\small\item\em Interfata pentru toate scenele. \end{DoxyCompactList}\item 
+class \hyperlink{classJoc}{Joc}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classScena}{Scena} jocului in sine. \end{DoxyCompactList}\item 
+class \hyperlink{classMeniuStart}{Meniu\+Start}
+\begin{DoxyCompactList}\small\item\em Defineste meniul afisat la deschiderea jocului. \end{DoxyCompactList}\item 
+class \hyperlink{classMeniuFinal}{Meniu\+Final}
+\begin{DoxyCompactList}\small\item\em Meniul care va fi afisat dupa terminarea unui joc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespace-\/uri}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceglobal}{global}
+\end{DoxyCompactItemize}
+\subsection*{Enumerări}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_aea66a0d525bf9bfb9b61e9cc1ba0b752}\label{main_8cpp_aea66a0d525bf9bfb9b61e9cc1ba0b752}} 
+enum \hyperlink{main_8cpp_aea66a0d525bf9bfb9b61e9cc1ba0b752}{Tip\+Directie} \{ {\bfseries S\+US} = 0, 
+{\bfseries J\+OS} = 1, 
+{\bfseries S\+T\+A\+N\+GA} = 2, 
+{\bfseries D\+R\+E\+A\+P\+TA} = 3
+ \}\begin{DoxyCompactList}\small\item\em Unde se poate deplasa omida. \end{DoxyCompactList}
+\item 
+enum \hyperlink{main_8cpp_a67b02df562611307c1e3adeace56d13e}{Posibilitate\+Teren} \{ {\bfseries G\+OL} = 0, 
+{\bfseries O\+M\+I\+DA}, 
+{\bfseries F\+R\+U\+N\+ZA}, 
+{\bfseries P\+O\+W\+E\+R\+UP}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funcţii}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a9f45632ef14236ddbaf284dc70cd2287}\label{main_8cpp_a9f45632ef14236ddbaf284dc70cd2287}} 
+bool \hyperlink{main_8cpp_a9f45632ef14236ddbaf284dc70cd2287}{a\+\_\+apasat} (S\+D\+L\+\_\+\+Scancode tasta)
+\begin{DoxyCompactList}\small\item\em Verifica daca jucatorul a apasat tasta data. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_af7eff58280fc6fe66098325981310609}{deseneaza\+\_\+cap} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&, int x, int y)
+\begin{DoxyCompactList}\small\item\em Deseneaza capul omizii la pozitia data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a45c775a13d22397f62c6a3b31133e01d}\label{main_8cpp_a45c775a13d22397f62c6a3b31133e01d}} 
+void \hyperlink{main_8cpp_a45c775a13d22397f62c6a3b31133e01d}{deseneaza\+\_\+corp} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&, int, int)
+\begin{DoxyCompactList}\small\item\em Deseneaza un corpul la pozitia data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a413026ec29c72f01082ed5c2235ac9cd}\label{main_8cpp_a413026ec29c72f01082ed5c2235ac9cd}} 
+void \hyperlink{main_8cpp_a413026ec29c72f01082ed5c2235ac9cd}{deseneaza\+\_\+frunza} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\begin{DoxyCompactList}\small\item\em Deseneaza frunza. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_aa57c630272aa6ab8ab15552adf8c165e}{deseneaza\+\_\+omida} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\begin{DoxyCompactList}\small\item\em Deseneaza intreaga omida. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_aee9c78f8a1bd879050f1bafc2bb907ce}\label{main_8cpp_aee9c78f8a1bd879050f1bafc2bb907ce}} 
+void \hyperlink{main_8cpp_aee9c78f8a1bd879050f1bafc2bb907ce}{deseneaza\+\_\+powerup} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\begin{DoxyCompactList}\small\item\em Deseneaza powerup-\/ul(un mar) pe ecran. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_ab93314a433d2cc641ea873947bc59df3}\label{main_8cpp_ab93314a433d2cc641ea873947bc59df3}} 
+void \hyperlink{main_8cpp_ab93314a433d2cc641ea873947bc59df3}{deseneaza\+\_\+textura} (S\+D\+L\+\_\+\+Texture $\ast$textura, int, int)
+\begin{DoxyCompactList}\small\item\em Pune textura data la pozitia data. \end{DoxyCompactList}\item 
+\hyperlink{structPunct}{Punct} \hyperlink{main_8cpp_a5f6f5f86af147286478cc7aadd76b0a2}{genereaza\+\_\+pozitie\+\_\+noua} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&stadiu)
+\item 
+void \hyperlink{main_8cpp_a81cdc1223b468897943076b72f048133}{initializeaza} ()
+\item 
+void \hyperlink{main_8cpp_a525009107790f4daffd5481e33cb039f}{marcheaza\+\_\+frunza} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\item 
+\mbox{\Hypertarget{main_8cpp_ad85beba6ce14e67569c227c8af4d5186}\label{main_8cpp_ad85beba6ce14e67569c227c8af4d5186}} 
+void \hyperlink{main_8cpp_ad85beba6ce14e67569c227c8af4d5186}{verifica\+\_\+evenimente} ()
+\begin{DoxyCompactList}\small\item\em Vede ce taste a apasat jucatorul si orice alte evenimente. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\item 
+\mbox{\Hypertarget{main_8cpp_a2f4fa91987e3731c64b385dc822f4425}\label{main_8cpp_a2f4fa91987e3731c64b385dc822f4425}} 
+bool {\bfseries e\+\_\+litera} (S\+D\+L\+\_\+\+Scancode t\+\_\+tasta)
+\item 
+\mbox{\Hypertarget{main_8cpp_a409b453676d92d35f214bc5bacab83d4}\label{main_8cpp_a409b453676d92d35f214bc5bacab83d4}} 
+bool {\bfseries e\+\_\+numar} (S\+D\+L\+\_\+\+Scancode t\+\_\+tasta)
+\end{DoxyCompactItemize}
+\subsection*{Variabile}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structPunct}{Punct} \hyperlink{main_8cpp_a68e903f0d20f0a68b3c01b73eb34e9ed}{directie} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespaceglobal_a07963dc89966c80411e6a3c896c07c10}\label{namespaceglobal_a07963dc89966c80411e6a3c896c07c10}} 
+S\+D\+L\+\_\+\+Window $\ast$ \hyperlink{namespaceglobal_a07963dc89966c80411e6a3c896c07c10}{global\+::fereastra} \{ nullptr \}
+\begin{DoxyCompactList}\small\item\em Fereastra in care vom desena tot. \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \hyperlink{namespaceglobal_ae80ab1c7d78e562614d35c3b78e44ea3}{global\+::desenator} \{ nullptr \}
+\item 
+bool \hyperlink{namespaceglobal_a930b1255fa49cd41dc635136822d56ee}{global\+::fereastra\+\_\+inchisa} = false
+\item 
+\mbox{\Hypertarget{namespaceglobal_a5ad71f80dc82eb6fd1036c8055a5dfbc}\label{namespaceglobal_a5ad71f80dc82eb6fd1036c8055a5dfbc}} 
+constexpr int \hyperlink{namespaceglobal_a5ad71f80dc82eb6fd1036c8055a5dfbc}{global\+::lungime} = 600
+\begin{DoxyCompactList}\small\item\em Lungimea ferestrei. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceglobal_a612e7b296f148c02400618f1770f57f7}\label{namespaceglobal_a612e7b296f148c02400618f1770f57f7}} 
+constexpr int \hyperlink{namespaceglobal_a612e7b296f148c02400618f1770f57f7}{global\+::inaltime} = 600
+\begin{DoxyCompactList}\small\item\em Inaltimea ferestrei. \end{DoxyCompactList}\item 
+std\+::deque$<$ std\+::unique\+\_\+ptr$<$ \hyperlink{classScena}{Scena} $>$ $>$ \hyperlink{namespaceglobal_af4564594d950b73d4bb81b8c0a4fe029}{global\+::scene}
+\item 
+std\+::map$<$ S\+D\+L\+\_\+\+Scancode, bool $>$ \hyperlink{namespaceglobal_a6da5c1308adb9fdac1c61389b139dc54}{global\+::taste\+\_\+apasate}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentaţia enumerărilor}
+\mbox{\Hypertarget{main_8cpp_a67b02df562611307c1e3adeace56d13e}\label{main_8cpp_a67b02df562611307c1e3adeace56d13e}} 
+\index{main.\+cpp@{main.\+cpp}!Posibilitate\+Teren@{Posibilitate\+Teren}}
+\index{Posibilitate\+Teren@{Posibilitate\+Teren}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{Posibilitate\+Teren}{PosibilitateTeren}}
+{\footnotesize\ttfamily enum \hyperlink{main_8cpp_a67b02df562611307c1e3adeace56d13e}{Posibilitate\+Teren}}
+
+Terenul este o matrice care contine una din urmatoarele posibilitati de mai jos. 
+
+Definiţia în linia 365 a fişierului main.\+cpp.
+
+
+
+\subsection{Documentaţia funcţiilor}
+\mbox{\Hypertarget{main_8cpp_af7eff58280fc6fe66098325981310609}\label{main_8cpp_af7eff58280fc6fe66098325981310609}} 
+\index{main.\+cpp@{main.\+cpp}!deseneaza\+\_\+cap@{deseneaza\+\_\+cap}}
+\index{deseneaza\+\_\+cap@{deseneaza\+\_\+cap}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{deseneaza\+\_\+cap()}{deseneaza\_cap()}}
+{\footnotesize\ttfamily void deseneaza\+\_\+cap (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{stadiu,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Deseneaza capul omizii la pozitia data. 
+
+
+\begin{DoxyParams}[1]{Parametri}
+\mbox{\tt in}  & {\em x} & Coordonata lungime ca in plan cartezian. \\
+\hline
+\mbox{\tt in}  & {\em y} & Inaltimea, coordonata (0, 0) este in coltul din stanga sus al ferestrei.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Atenţie}
+Pozitia data nu are aceleasi coordonate ca \hyperlink{structPunct}{Punct}. x si y se refera la pozitia in fereastra, nu in matrice. Se aplica si la \hyperlink{main_8cpp_a45c775a13d22397f62c6a3b31133e01d}{deseneaza\+\_\+corp}, \hyperlink{main_8cpp_ab93314a433d2cc641ea873947bc59df3}{deseneaza\+\_\+textura}. 
+\end{DoxyAttention}
+
+
+Definiţia în linia 837 a fişierului main.\+cpp.
+
+
+
+Referinţe deseneaza\+\_\+textura().
+
+
+
+Semnalat de deseneaza\+\_\+omida().
+
+\mbox{\Hypertarget{main_8cpp_aa57c630272aa6ab8ab15552adf8c165e}\label{main_8cpp_aa57c630272aa6ab8ab15552adf8c165e}} 
+\index{main.\+cpp@{main.\+cpp}!deseneaza\+\_\+omida@{deseneaza\+\_\+omida}}
+\index{deseneaza\+\_\+omida@{deseneaza\+\_\+omida}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{deseneaza\+\_\+omida()}{deseneaza\_omida()}}
+{\footnotesize\ttfamily void deseneaza\+\_\+omida (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{stadiu }\end{DoxyParamCaption})}
+
+
+
+Deseneaza intreaga omida. 
+
+Parcurge \hyperlink{classStadiulJocului_a64e0608d9c68b22ea83fd5aba209453f}{Stadiul\+Jocului\+::pozitii\+\_\+omida} si deseneaza fiecare parte a omizii. 
+
+Definiţia în linia 853 a fişierului main.\+cpp.
+
+
+
+Referinţe deseneaza\+\_\+cap(), deseneaza\+\_\+corp(), Punct\+::i, Stadiul\+Jocului\+::inaltime\+\_\+textura, Punct\+::j, Stadiul\+Jocului\+::lungime\+\_\+textura şi Stadiul\+Jocului\+::pozitii\+\_\+omida.
+
+\mbox{\Hypertarget{main_8cpp_a5f6f5f86af147286478cc7aadd76b0a2}\label{main_8cpp_a5f6f5f86af147286478cc7aadd76b0a2}} 
+\index{main.\+cpp@{main.\+cpp}!genereaza\+\_\+pozitie\+\_\+noua@{genereaza\+\_\+pozitie\+\_\+noua}}
+\index{genereaza\+\_\+pozitie\+\_\+noua@{genereaza\+\_\+pozitie\+\_\+noua}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{genereaza\+\_\+pozitie\+\_\+noua()}{genereaza\_pozitie\_noua()}}
+{\footnotesize\ttfamily \hyperlink{structPunct}{Punct} genereaza\+\_\+pozitie\+\_\+noua (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{stadiu }\end{DoxyParamCaption})}
+
+Returneaza un punct la nimereala cu conditia ca in acea pozitie in matricesa nu fie nimic. 
+
+Definiţia în linia 892 a fişierului main.\+cpp.
+
+
+
+Referinţe Punct\+::i, Stadiul\+Jocului\+::inaltime\+\_\+teren, Punct\+::j, Stadiul\+Jocului\+::lungime\+\_\+teren şi Stadiul\+Jocului\+::teren.
+
+
+
+Semnalat de Joc\+::itereaza().
+
+\mbox{\Hypertarget{main_8cpp_a81cdc1223b468897943076b72f048133}\label{main_8cpp_a81cdc1223b468897943076b72f048133}} 
+\index{main.\+cpp@{main.\+cpp}!initializeaza@{initializeaza}}
+\index{initializeaza@{initializeaza}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{initializeaza()}{initializeaza()}}
+{\footnotesize\ttfamily void initializeaza (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creeaza fereastra si desenatorul. 
+
+Definiţia în linia 912 a fişierului main.\+cpp.
+
+
+
+Referinţe global\+::desenator, global\+::fereastra, global\+::inaltime şi global\+::lungime.
+
+
+
+Semnalat de main().
+
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Toata magia se intampla aici. 
+
+Definiţia în linia 768 a fişierului main.\+cpp.
+
+
+
+Referinţe global\+::desenator, global\+::fereastra\+\_\+inchisa, initializeaza(), global\+::scene, global\+::taste\+\_\+apasate, Stadiul\+Jocului\+::timp\+\_\+trecut şi verifica\+\_\+evenimente().
+
+\mbox{\Hypertarget{main_8cpp_a525009107790f4daffd5481e33cb039f}\label{main_8cpp_a525009107790f4daffd5481e33cb039f}} 
+\index{main.\+cpp@{main.\+cpp}!marcheaza\+\_\+frunza@{marcheaza\+\_\+frunza}}
+\index{marcheaza\+\_\+frunza@{marcheaza\+\_\+frunza}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{marcheaza\+\_\+frunza()}{marcheaza\_frunza()}}
+{\footnotesize\ttfamily void marcheaza\+\_\+frunza (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{stadiu }\end{DoxyParamCaption})}
+
+Pune in matricea jocului pe pozitia \hyperlink{classStadiulJocului_a141067404f3678036ee7a91a02532a30}{Stadiul\+Jocului\+::pozitie\+\_\+frunza} Posibilitate\+Teren\+::\+F\+R\+U\+N\+ZA. 
+
+Definiţia în linia 942 a fişierului main.\+cpp.
+
+
+
+Referinţe Punct\+::i, Punct\+::j, Stadiul\+Jocului\+::pozitie\+\_\+frunza şi Stadiul\+Jocului\+::teren.
+
+
+
+\subsection{Documentaţia variabilelor}
+\mbox{\Hypertarget{main_8cpp_a68e903f0d20f0a68b3c01b73eb34e9ed}\label{main_8cpp_a68e903f0d20f0a68b3c01b73eb34e9ed}} 
+\index{main.\+cpp@{main.\+cpp}!directie@{directie}}
+\index{directie@{directie}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{directie}{directie}}
+{\footnotesize\ttfamily \hyperlink{structPunct}{Punct} directie\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Valoarea iniţială\+:}
+\begin{DoxyCode}
+= \{
+    \{ -1,  0 \}, 
+    \{  1,  0 \}, 
+    \{  0, -1 \}, 
+    \{  0,  1 \}  
+\}
+\end{DoxyCode}
+Pentru a face mutarea omizii mai usoara pozitiile capului si cozii vor fi actualizate cu pozitiile lor curente + directie\mbox{[}S\+T\+A\+N\+GA\mbox{]} sau D\+R\+E\+A\+P\+TA etc. 
+\begin{DoxyCode}
+\hyperlink{structPunct}{Punct} cap\{ 2, 3 \};
+\textcolor{comment}{// Pentru a muta la stanga:}
+cap.\hyperlink{structPunct_a28bb6f2facdfadbf7e19d651c526a646}{i} += \hyperlink{main_8cpp_a68e903f0d20f0a68b3c01b73eb34e9ed}{directie}[STANGA].\hyperlink{structPunct_a28bb6f2facdfadbf7e19d651c526a646}{i};
+cap.j += \hyperlink{main_8cpp_a68e903f0d20f0a68b3c01b73eb34e9ed}{directie}[STANGA].\hyperlink{structPunct_a065a30931a1d15d6f6c638c4888d254e}{j};
+\end{DoxyCode}
+ 
+
+Definiţia în linia 355 a fişierului main.\+cpp.
+

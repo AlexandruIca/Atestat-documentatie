@@ -1,0 +1,28 @@
+\hypertarget{group__group__meniuri}{}\section{Meniuri}
+\label{group__group__meniuri}\index{Meniuri@{Meniuri}}
+Jocul in sine nu este prea complicat. Snake este un joc arhipopular care are multe implementari. Totusi, problema intervine cand vrem sa avem si alte \char`\"{}auxiliare\char`\"{} pentru joc, cum ar fi un meniu de start si final. Cum putem tine separat codul pentru a desena meniuri si cel care tine de jocul efectiv?
+
+O metoda naiva ar fi sa verificam pur si simplu prin niste if-\/uri unde ne aflam. Ceva de genul\+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(este\_in\_meniu\_start) \{ \textcolor{comment}{/* ... */} \}
+\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(este\_in\_joc) \{ \textcolor{comment}{/* .. */} \}
+\textcolor{comment}{/* etc */}
+\end{DoxyCode}
+
+
+Metoda naiva functioneaza dar este foarte limitata(si urata). Jocurile mult mai complexe care trebuie sa deseneze un meniu separat numai pentru optiunile jocului in timp ce are alte submeniuri nu poate functiona asa. Atunci am implementat conceptul de scene.
+
+O scena este practic un joc intreg. Meniul de start are propria scena, jocul in sine are propria scena, meniul de final alta scena, etc. Mai exact, fiecare scena este o clasa care trebuie sa mosteneasca \hyperlink{classScena}{Scena}. O scena trebuie sa aibe 3 functii implementate\+:
+\begin{DoxyItemize}
+\item incarca
+\item incarcat\+\_\+deja
+\item itereaza
+\end{DoxyItemize}
+
+\hyperlink{classScena_a6f53a1dcef68084361dc8f9d56bbb8c0}{Scena\+::incarca} face o initializare a scenei, de exemplu in scena \hyperlink{classJoc}{Joc} functia \hyperlink{classJoc_a54976207efdeeb45b42fd639215b65e3}{Joc\+::incarca} incarca toate imaginile pentru omida, frunza, mar, initializeaza matricea jocului etc.
+
+\hyperlink{classScena_ac8de771024795dffa0e5feb8dba881ff}{Scena\+::incarcat\+\_\+deja} este evidenta.
+
+\hyperlink{classScena_a9e5fcc831ed410b5b2422231ede746ee}{Scena\+::itereaza} este apelata la fiecare pas in \hyperlink{group__group__main__loop}{Principala repetitie}.
+
+Scenele sunt stocate in \hyperlink{namespaceglobal_af4564594d950b73d4bb81b8c0a4fe029}{global\+::scene} intr-\/o coada, la fel ca \hyperlink{classStadiulJocului_a64e0608d9c68b22ea83fd5aba209453f}{Stadiul\+Jocului\+::pozitii\+\_\+omida} sub forma unor pointeri. \hyperlink{classScena}{Scena} este o clasa abstracta deci nu poate fi create direct, decat prin mostenitori, deci trebuie folositi pointeri. Astfel avem un sistem flexibil prin care putem reprezenta scene. Vedeti cum sunt folosite exact in \hyperlink{group__group__main__loop}{Principala repetitie}. 

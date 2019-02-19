@@ -1,0 +1,11 @@
+\hypertarget{group__group__jocul__efectiv}{}\section{Jocul efectiv}
+\label{group__group__jocul__efectiv}\index{Jocul efectiv@{Jocul efectiv}}
+Jocul va incepe cu o omida mica asezata aproximativ in centrul ferestrei. Pe capul omizii este afisat scorul curent(care incepe cu 0). Omida se misca automat in directia setata de jucator la un interval de 150 de milisecunde, reprezentat de variabila \hyperlink{classStadiulJocului_a4cdf9582b472e74980e1eee73ca94769}{Stadiul\+Jocului\+::timp\+\_\+asteptare\+\_\+maxim}.
+
+Initial directia in care se va deplasa omida este Tip\+Directie\+::\+S\+US. Toate directiile sunt in enumeratia \hyperlink{main_8cpp_aea66a0d525bf9bfb9b61e9cc1ba0b752}{Tip\+Directie}. Pentru a schimba directia omizii se folosesc fie sagetile, fie tastele h, j, k, l(inspirate din vim, h -\/ Tip\+Directie\+::\+S\+T\+A\+N\+GA, j -\/ Tip\+Directie\+::\+J\+OS, k -\/ Tip\+Directie\+::\+S\+US, l -\/ Tip\+Directie\+::\+D\+R\+E\+A\+P\+TA.
+
+De asemenea pe undeva in teren este afisata si o frunza care va incrementa scorul cu 1 daca veti ajunge la ea. Cand \char`\"{}mancati\char`\"{} o frunza veti auzi si sunetul reprezentat de variabile \hyperlink{classJoc_ac92412a0e2de93936c4c600a7efe45f4}{Joc\+::m\+\_\+sunet\+\_\+frunza}. Exista si un powerup in joc(adica un mar) care va incrementa scorul cu 10. Marul este generat odata la 20 de secunde(evident, daca nu este deja in teren). Sunetul redat la \char`\"{}mancarea\char`\"{} unui mar este reprezentat de variabila \hyperlink{classJoc_aec45d2779304b9ee3ba5c3962a66323b}{Joc\+::m\+\_\+sunet\+\_\+powerup}.
+
+Terenul are dimensiunile 20x20 ceea ce inseamna ca intervalul de 150ms poate fi un pic cam mare. Pentru a misca omida mai repede tineti apasat tastele cu care schimbari directia. Cat tineti apasat tastele respective acele 150ms vor deveni 50ms.
+
+Pentru a face jocul un pic mai complicat daca ajugeti la marginile terenului omida va muri. In multe variante de snake sarpele nu moare daca atinge peretele ci va continua pe partea opusa. Omida noastra poate muri si daca a ajuns la margine si daca s-\/a lovit de propiul ei corp. 

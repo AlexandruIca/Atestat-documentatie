@@ -1,0 +1,153 @@
+\hypertarget{classMeniuStart}{}\section{Referinţă la clasa Meniu\+Start}
+\label{classMeniuStart}\index{Meniu\+Start@{Meniu\+Start}}
+
+
+Defineste meniul afisat la deschiderea jocului.  
+
+
+
+
+Diagrama de relaţii pentru Meniu\+Start
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classMeniuStart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de relaţii pentru Meniu\+Start\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classMeniuStart__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metode Publice}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeniuStart_abfc0ef10adadd6f9756996fc7c61bf76}\label{classMeniuStart_abfc0ef10adadd6f9756996fc7c61bf76}} 
+virtual void \hyperlink{classMeniuStart_abfc0ef10adadd6f9756996fc7c61bf76}{iesire} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&) override
+\begin{DoxyCompactList}\small\item\em Paraseste scena. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMeniuStart_afb59dcb21968a6ccd685a6c9c0d6a0c1}{incarca} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&) override
+\item 
+virtual bool \hyperlink{classMeniuStart_a76d8d1b449800060994971ea9df75fd3}{incarcat\+\_\+deja} () override
+\item 
+virtual bool \hyperlink{classMeniuStart_a35a84c537eca90b76697d1bef88216e5}{itereaza} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&) override
+\begin{DoxyCompactList}\small\item\em Executa functia la fiecare \textquotesingle{}desenare\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Tipuri Private}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeniuStart_a9c31d6c8b52efb87116aac4b176f8375}\label{classMeniuStart_a9c31d6c8b52efb87116aac4b176f8375}} 
+enum {\bfseries tip\+\_\+meniu} \{ {\bfseries S\+T\+A\+R\+T\+\_\+\+J\+OC} = 0, 
+{\bfseries I\+E\+S\+I\+RE}, 
+{\bfseries N\+R\+\_\+\+M\+E\+N\+I\+U\+RI}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Metode Private}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeniuStart_ae81aee43c415d5ea2f07469baa2fcfc1}\label{classMeniuStart_ae81aee43c415d5ea2f07469baa2fcfc1}} 
+bool {\bfseries click\+\_\+in\+\_\+meniu} ()
+\item 
+\mbox{\Hypertarget{classMeniuStart_a046f60fb2d3a67db5cef26376c69150e}\label{classMeniuStart_a046f60fb2d3a67db5cef26376c69150e}} 
+bool {\bfseries verifica\+\_\+evenimente} (\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&)
+\end{DoxyCompactItemize}
+\subsection*{Atribute Private}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMeniuStart_a9d934fb5c51907f5f0bce6d259cdeb24}\label{classMeniuStart_a9d934fb5c51907f5f0bce6d259cdeb24}} 
+bool {\bfseries m\+\_\+incarcat} = false
+\item 
+\mbox{\Hypertarget{classMeniuStart_aea1b80044a1dce077fd9bd052bbfe279}\label{classMeniuStart_aea1b80044a1dce077fd9bd052bbfe279}} 
+tip\+\_\+meniu {\bfseries m\+\_\+meniu\+\_\+selectat} = tip\+\_\+meniu\+::\+S\+T\+A\+R\+T\+\_\+\+J\+OC
+\item 
+\mbox{\Hypertarget{classMeniuStart_a0428348c2459b05e54c32ee3835a80cf}\label{classMeniuStart_a0428348c2459b05e54c32ee3835a80cf}} 
+S\+D\+L\+\_\+\+Rect {\bfseries m\+\_\+dreptunghi\+\_\+meniu} \mbox{[}N\+R\+\_\+\+M\+E\+N\+I\+U\+RI\mbox{]}
+\item 
+\mbox{\Hypertarget{classMeniuStart_acd083e350cda462b27e3cfccc2ca4298}\label{classMeniuStart_acd083e350cda462b27e3cfccc2ca4298}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries m\+\_\+textura\+\_\+meniu} \mbox{[}N\+R\+\_\+\+M\+E\+N\+I\+U\+RI\mbox{]}
+\item 
+\mbox{\Hypertarget{classMeniuStart_a6982327ecd2eb251a25da2651b1ee80a}\label{classMeniuStart_a6982327ecd2eb251a25da2651b1ee80a}} 
+T\+T\+F\+\_\+\+Font $\ast$ {\bfseries m\+\_\+font} = nullptr
+\item 
+\mbox{\Hypertarget{classMeniuStart_a93aae50a78dc2df745728a2e8b6bbb11}\label{classMeniuStart_a93aae50a78dc2df745728a2e8b6bbb11}} 
+const char $\ast$ {\bfseries m\+\_\+meniu\+\_\+text} \mbox{[}N\+R\+\_\+\+M\+E\+N\+I\+U\+RI\mbox{]}
+\item 
+\mbox{\Hypertarget{classMeniuStart_a9b6b148717c5fd9f860bc046ecac255c}\label{classMeniuStart_a9b6b148717c5fd9f860bc046ecac255c}} 
+const S\+D\+L\+\_\+\+Color {\bfseries m\+\_\+culoare\+\_\+background\+\_\+meniu} = \{ 153, 51, 153, 255 \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descriere Detaliată}
+Defineste meniul afisat la deschiderea jocului. 
+
+Definiţia în linia 631 a fişierului main.\+cpp.
+
+
+
+\subsection{Documentaţia Funcţiilor Membre}
+\mbox{\Hypertarget{classMeniuStart_afb59dcb21968a6ccd685a6c9c0d6a0c1}\label{classMeniuStart_afb59dcb21968a6ccd685a6c9c0d6a0c1}} 
+\index{Meniu\+Start@{Meniu\+Start}!incarca@{incarca}}
+\index{incarca@{incarca}!Meniu\+Start@{Meniu\+Start}}
+\subsubsection{\texorpdfstring{incarca()}{incarca()}}
+{\footnotesize\ttfamily void Meniu\+Start\+::incarca (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Initializeza scena. 
+
+Implementează \hyperlink{classScena_a6f53a1dcef68084361dc8f9d56bbb8c0}{Scena}.
+
+
+
+Definiţia în linia 1304 a fişierului main.\+cpp.
+
+
+
+Referinţe global\+::desenator, Punct\+::i, global\+::inaltime şi global\+::lungime.
+
+\mbox{\Hypertarget{classMeniuStart_a76d8d1b449800060994971ea9df75fd3}\label{classMeniuStart_a76d8d1b449800060994971ea9df75fd3}} 
+\index{Meniu\+Start@{Meniu\+Start}!incarcat\+\_\+deja@{incarcat\+\_\+deja}}
+\index{incarcat\+\_\+deja@{incarcat\+\_\+deja}!Meniu\+Start@{Meniu\+Start}}
+\subsubsection{\texorpdfstring{incarcat\+\_\+deja()}{incarcat\_deja()}}
+{\footnotesize\ttfamily bool Meniu\+Start\+::incarcat\+\_\+deja (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Verifica daca scena curenta a fost incarcata deja. 
+
+Implementează \hyperlink{classScena_ac8de771024795dffa0e5feb8dba881ff}{Scena}.
+
+
+
+Definiţia în linia 1335 a fişierului main.\+cpp.
+
+\mbox{\Hypertarget{classMeniuStart_a35a84c537eca90b76697d1bef88216e5}\label{classMeniuStart_a35a84c537eca90b76697d1bef88216e5}} 
+\index{Meniu\+Start@{Meniu\+Start}!itereaza@{itereaza}}
+\index{itereaza@{itereaza}!Meniu\+Start@{Meniu\+Start}}
+\subsubsection{\texorpdfstring{itereaza()}{itereaza()}}
+{\footnotesize\ttfamily bool Meniu\+Start\+::itereaza (\begin{DoxyParamCaption}\item[{\hyperlink{classStadiulJocului}{Stadiul\+Jocului} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executa functia la fiecare \textquotesingle{}desenare\textquotesingle{}. 
+
+\begin{DoxyReturn}{Întoarce}
+Adevarat daca iterarea va continua, fals altfel. 
+\end{DoxyReturn}
+
+
+Implementează \hyperlink{classScena_a9e5fcc831ed410b5b2422231ede746ee}{Scena}.
+
+
+
+Definiţia în linia 1338 a fişierului main.\+cpp.
+
+
+
+Referinţe a\+\_\+apasat(), global\+::desenator, global\+::fereastra\+\_\+inchisa, Punct\+::i, Stadiul\+Jocului\+::inaltime\+\_\+textura, Stadiul\+Jocului\+::lungime\+\_\+textura şi verifica\+\_\+evenimente().
+
+
+
+Documentaţia pentru această clasă a fost generată din fişierul\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8cpp}{main.\+cpp}\end{DoxyCompactItemize}
