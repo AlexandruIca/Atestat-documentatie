@@ -1,0 +1,156 @@
+\begin{theindex}
+
+  \item {Cum reprezint obiectele jocului?}, \hyperpage{26}
+
+  \indexspace
+
+  \item {Desenand pe ecran}, \hyperpage{25}
+  \item {desenator}
+    \subitem {global}, \hyperpage{29}
+  \item {deseneaza\+\_\+cap}
+    \subitem {main.\+cpp}, \hyperpage{49}
+  \item {deseneaza\+\_\+omida}
+    \subitem {main.\+cpp}, \hyperpage{49}
+  \item {directia\+\_\+omizii}
+    \subitem {Stadiul\+Jocului}, \hyperpage{45}
+  \item {directie}
+    \subitem {main.\+cpp}, \hyperpage{51}
+
+  \indexspace
+
+  \item {fereastra\+\_\+inchisa}
+    \subitem {global}, \hyperpage{29}
+  \item {Final}, \hyperpage{24}
+
+  \indexspace
+
+  \item {genereaza\+\_\+pozitie\+\_\+noua}
+    \subitem {main.\+cpp}, \hyperpage{50}
+  \item {global}, \hyperpage{29}
+    \subitem {desenator}, \hyperpage{29}
+    \subitem {fereastra\+\_\+inchisa}, \hyperpage{29}
+    \subitem {scene}, \hyperpage{30}
+    \subitem {taste\+\_\+apasate}, \hyperpage{30}
+
+  \indexspace
+
+  \item {incarca}
+    \subitem {Joc}, \hyperpage{32}
+    \subitem {Meniu\+Final}, \hyperpage{37}
+    \subitem {Meniu\+Start}, \hyperpage{39}
+    \subitem {Scena}, \hyperpage{43}
+  \item {incarcat\+\_\+deja}
+    \subitem {Joc}, \hyperpage{33}
+    \subitem {Meniu\+Final}, \hyperpage{37}
+    \subitem {Meniu\+Start}, \hyperpage{39}
+    \subitem {Scena}, \hyperpage{43}
+  \item {initializeaza}
+    \subitem {main.\+cpp}, \hyperpage{50}
+  \item {itereaza}
+    \subitem {Joc}, \hyperpage{33}
+    \subitem {Meniu\+Final}, \hyperpage{37}
+    \subitem {Meniu\+Start}, \hyperpage{40}
+    \subitem {Scena}, \hyperpage{43}
+
+  \indexspace
+
+  \item {Joc}, \hyperpage{31}
+    \subitem {incarca}, \hyperpage{32}
+    \subitem {incarcat\+\_\+deja}, \hyperpage{33}
+    \subitem {itereaza}, \hyperpage{33}
+    \subitem {m\+\_\+timp\+\_\+asteptat}, \hyperpage{35}
+    \subitem {muta\+\_\+omida}, \hyperpage{33}
+    \subitem {noua\+\_\+directie\+\_\+a\+\_\+omizii}, \hyperpage{35}
+    \subitem {pauza}, \hyperpage{34}
+    \subitem {verifica\+\_\+taste\+\_\+apasate}, \hyperpage{34}
+  \item {Jocul efectiv}, \hyperpage{22}
+
+  \indexspace
+
+  \item {lungime\+\_\+textura}
+    \subitem {Stadiul\+Jocului}, \hyperpage{45}
+
+  \indexspace
+
+  \item {m\+\_\+istoric}
+    \subitem {Meniu\+Final}, \hyperpage{37}
+  \item {m\+\_\+timp\+\_\+asteptat}
+    \subitem {Joc}, \hyperpage{35}
+  \item {main}
+    \subitem {main.\+cpp}, \hyperpage{50}
+  \item {main.\+cpp}, \hyperpage{47}
+    \subitem {deseneaza\+\_\+cap}, \hyperpage{49}
+    \subitem {deseneaza\+\_\+omida}, \hyperpage{49}
+    \subitem {directie}, \hyperpage{51}
+    \subitem {genereaza\+\_\+pozitie\+\_\+noua}, \hyperpage{50}
+    \subitem {initializeaza}, \hyperpage{50}
+    \subitem {main}, \hyperpage{50}
+    \subitem {marcheaza\+\_\+frunza}, \hyperpage{50}
+    \subitem {Posibilitate\+Teren}, \hyperpage{49}
+  \item {marcheaza\+\_\+frunza}
+    \subitem {main.\+cpp}, \hyperpage{50}
+  \item {Meniu start}, \hyperpage{21}
+  \item {Meniu\+Final}, \hyperpage{35}
+    \subitem {incarca}, \hyperpage{37}
+    \subitem {incarcat\+\_\+deja}, \hyperpage{37}
+    \subitem {itereaza}, \hyperpage{37}
+    \subitem {m\+\_\+istoric}, \hyperpage{37}
+  \item {Meniu\+Start}, \hyperpage{38}
+    \subitem {incarca}, \hyperpage{39}
+    \subitem {incarcat\+\_\+deja}, \hyperpage{39}
+    \subitem {itereaza}, \hyperpage{40}
+  \item {Meniuri}, \hyperpage{27}
+  \item {muta\+\_\+omida}
+    \subitem {Joc}, \hyperpage{33}
+
+  \indexspace
+
+  \item {noua\+\_\+directie\+\_\+a\+\_\+omizii}
+    \subitem {Joc}, \hyperpage{35}
+
+  \indexspace
+
+  \item {Pauza}, \hyperpage{23}
+  \item {pauza}
+    \subitem {Joc}, \hyperpage{34}
+  \item {Posibilitate\+Teren}
+    \subitem {main.\+cpp}, \hyperpage{49}
+  \item {pozitie\+\_\+powerup}
+    \subitem {Stadiul\+Jocului}, \hyperpage{45}
+  \item {pozitii\+\_\+omida}
+    \subitem {Stadiul\+Jocului}, \hyperpage{46}
+  \item {Principala repetitie}, \hyperpage{28}
+  \item {Punct}, \hyperpage{40}
+    \subitem {Punct}, \hyperpage{41}
+
+  \indexspace
+
+  \item {Scena}, \hyperpage{42}
+    \subitem {incarca}, \hyperpage{43}
+    \subitem {incarcat\+\_\+deja}, \hyperpage{43}
+    \subitem {itereaza}, \hyperpage{43}
+  \item {scene}
+    \subitem {global}, \hyperpage{30}
+  \item {scor}
+    \subitem {Stadiul\+Jocului}, \hyperpage{46}
+  \item {Stadiul\+Jocului}, \hyperpage{44}
+    \subitem {directia\+\_\+omizii}, \hyperpage{45}
+    \subitem {lungime\+\_\+textura}, \hyperpage{45}
+    \subitem {pozitie\+\_\+powerup}, \hyperpage{45}
+    \subitem {pozitii\+\_\+omida}, \hyperpage{46}
+    \subitem {scor}, \hyperpage{46}
+    \subitem {teren}, \hyperpage{46}
+
+  \indexspace
+
+  \item {taste\+\_\+apasate}
+    \subitem {global}, \hyperpage{30}
+  \item {teren}
+    \subitem {Stadiul\+Jocului}, \hyperpage{46}
+
+  \indexspace
+
+  \item {verifica\+\_\+taste\+\_\+apasate}
+    \subitem {Joc}, \hyperpage{34}
+
+\end{theindex}
